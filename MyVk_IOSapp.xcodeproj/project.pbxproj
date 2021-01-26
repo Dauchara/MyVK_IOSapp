@@ -7,63 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F80B51425C078A6006A4B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80B51325C078A6006A4B74 /* AppDelegate.swift */; };
-		0F80B51625C078A6006A4B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80B51525C078A6006A4B74 /* ViewController.swift */; };
-		0F80B51825C078A7006A4B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F80B51725C078A7006A4B74 /* Assets.xcassets */; };
-		0F80B51B25C078A7006A4B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80B51925C078A7006A4B74 /* Main.storyboard */; };
-		0F80B52725C078A7006A4B74 /* MyVk_IOSappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80B52625C078A7006A4B74 /* MyVk_IOSappTests.swift */; };
-		0F80B53225C078A7006A4B74 /* MyVk_IOSappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80B53125C078A7006A4B74 /* MyVk_IOSappUITests.swift */; };
+		0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */; };
+		0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */; };
+		0FF70E8425C07C6800E37CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8325C07C6800E37CC5 /* ViewController.swift */; };
+		0FF70E8725C07C6800E37CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF70E8525C07C6800E37CC5 /* Main.storyboard */; };
+		0FF70E8925C07C6900E37CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF70E8825C07C6900E37CC5 /* Assets.xcassets */; };
+		0FF70E8C25C07C6900E37CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF70E8A25C07C6900E37CC5 /* LaunchScreen.storyboard */; };
+		0FF70E9725C07C6900E37CC5 /* MyVK_IOSappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E9625C07C6900E37CC5 /* MyVK_IOSappTests.swift */; };
+		0FF70EA225C07C6900E37CC5 /* MyVK_IOSappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70EA125C07C6900E37CC5 /* MyVK_IOSappUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0F80B52325C078A7006A4B74 /* PBXContainerItemProxy */ = {
+		0FF70E9325C07C6900E37CC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0F80B50825C078A6006A4B74 /* Project object */;
+			containerPortal = 0FF70E7425C07C6800E37CC5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0F80B50F25C078A6006A4B74;
-			remoteInfo = MyVk_IOSapp;
+			remoteGlobalIDString = 0FF70E7B25C07C6800E37CC5;
+			remoteInfo = MyVK_IOSapp;
 		};
-		0F80B52E25C078A7006A4B74 /* PBXContainerItemProxy */ = {
+		0FF70E9E25C07C6900E37CC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0F80B50825C078A6006A4B74 /* Project object */;
+			containerPortal = 0FF70E7425C07C6800E37CC5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0F80B50F25C078A6006A4B74;
-			remoteInfo = MyVk_IOSapp;
+			remoteGlobalIDString = 0FF70E7B25C07C6800E37CC5;
+			remoteInfo = MyVK_IOSapp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F80B51025C078A6006A4B74 /* MyVk_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVk_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F80B51325C078A6006A4B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F80B51525C078A6006A4B74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0F80B51725C078A7006A4B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0F80B51A25C078A7006A4B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0F80B51C25C078A7006A4B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F80B51D25C078A7006A4B74 /* MyVk_IOSapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyVk_IOSapp.entitlements; sourceTree = "<group>"; };
-		0F80B52225C078A7006A4B74 /* MyVk_IOSappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVk_IOSappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F80B52625C078A7006A4B74 /* MyVk_IOSappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVk_IOSappTests.swift; sourceTree = "<group>"; };
-		0F80B52825C078A7006A4B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F80B52D25C078A7006A4B74 /* MyVk_IOSappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVk_IOSappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F80B53125C078A7006A4B74 /* MyVk_IOSappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVk_IOSappUITests.swift; sourceTree = "<group>"; };
-		0F80B53325C078A7006A4B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0FF70E8325C07C6800E37CC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FF70E8625C07C6800E37CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FF70E8825C07C6900E37CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FF70E8B25C07C6900E37CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FF70E8D25C07C6900E37CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF70E9225C07C6900E37CC5 /* MyVK_IOSappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVK_IOSappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF70E9625C07C6900E37CC5 /* MyVK_IOSappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVK_IOSappTests.swift; sourceTree = "<group>"; };
+		0FF70E9825C07C6900E37CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF70E9D25C07C6900E37CC5 /* MyVK_IOSappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVK_IOSappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF70EA125C07C6900E37CC5 /* MyVK_IOSappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVK_IOSappUITests.swift; sourceTree = "<group>"; };
+		0FF70EA325C07C6900E37CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0F80B50D25C078A6006A4B74 /* Frameworks */ = {
+		0FF70E7925C07C6800E37CC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B51F25C078A7006A4B74 /* Frameworks */ = {
+		0FF70E8F25C07C6900E37CC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B52A25C078A7006A4B74 /* Frameworks */ = {
+		0FF70E9A25C07C6900E37CC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,136 +76,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F80B50725C078A6006A4B74 = {
+		0FF70E7325C07C6800E37CC5 = {
 			isa = PBXGroup;
 			children = (
-				0F80B51225C078A6006A4B74 /* MyVk_IOSapp */,
-				0F80B52525C078A7006A4B74 /* MyVk_IOSappTests */,
-				0F80B53025C078A7006A4B74 /* MyVk_IOSappUITests */,
-				0F80B51125C078A6006A4B74 /* Products */,
+				0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */,
+				0FF70E9525C07C6900E37CC5 /* MyVK_IOSappTests */,
+				0FF70EA025C07C6900E37CC5 /* MyVK_IOSappUITests */,
+				0FF70E7D25C07C6800E37CC5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0F80B51125C078A6006A4B74 /* Products */ = {
+		0FF70E7D25C07C6800E37CC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F80B51025C078A6006A4B74 /* MyVk_IOSapp.app */,
-				0F80B52225C078A7006A4B74 /* MyVk_IOSappTests.xctest */,
-				0F80B52D25C078A7006A4B74 /* MyVk_IOSappUITests.xctest */,
+				0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */,
+				0FF70E9225C07C6900E37CC5 /* MyVK_IOSappTests.xctest */,
+				0FF70E9D25C07C6900E37CC5 /* MyVK_IOSappUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0F80B51225C078A6006A4B74 /* MyVk_IOSapp */ = {
+		0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXGroup;
 			children = (
-				0F80B51325C078A6006A4B74 /* AppDelegate.swift */,
-				0F80B51525C078A6006A4B74 /* ViewController.swift */,
-				0F80B51725C078A7006A4B74 /* Assets.xcassets */,
-				0F80B51925C078A7006A4B74 /* Main.storyboard */,
-				0F80B51C25C078A7006A4B74 /* Info.plist */,
-				0F80B51D25C078A7006A4B74 /* MyVk_IOSapp.entitlements */,
+				0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */,
+				0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */,
+				0FF70E8325C07C6800E37CC5 /* ViewController.swift */,
+				0FF70E8525C07C6800E37CC5 /* Main.storyboard */,
+				0FF70E8825C07C6900E37CC5 /* Assets.xcassets */,
+				0FF70E8A25C07C6900E37CC5 /* LaunchScreen.storyboard */,
+				0FF70E8D25C07C6900E37CC5 /* Info.plist */,
 			);
-			path = MyVk_IOSapp;
+			path = MyVK_IOSapp;
 			sourceTree = "<group>";
 		};
-		0F80B52525C078A7006A4B74 /* MyVk_IOSappTests */ = {
+		0FF70E9525C07C6900E37CC5 /* MyVK_IOSappTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F80B52625C078A7006A4B74 /* MyVk_IOSappTests.swift */,
-				0F80B52825C078A7006A4B74 /* Info.plist */,
+				0FF70E9625C07C6900E37CC5 /* MyVK_IOSappTests.swift */,
+				0FF70E9825C07C6900E37CC5 /* Info.plist */,
 			);
-			path = MyVk_IOSappTests;
+			path = MyVK_IOSappTests;
 			sourceTree = "<group>";
 		};
-		0F80B53025C078A7006A4B74 /* MyVk_IOSappUITests */ = {
+		0FF70EA025C07C6900E37CC5 /* MyVK_IOSappUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0F80B53125C078A7006A4B74 /* MyVk_IOSappUITests.swift */,
-				0F80B53325C078A7006A4B74 /* Info.plist */,
+				0FF70EA125C07C6900E37CC5 /* MyVK_IOSappUITests.swift */,
+				0FF70EA325C07C6900E37CC5 /* Info.plist */,
 			);
-			path = MyVk_IOSappUITests;
+			path = MyVK_IOSappUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F80B50F25C078A6006A4B74 /* MyVk_IOSapp */ = {
+		0FF70E7B25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F80B53625C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSapp" */;
+			buildConfigurationList = 0FF70EA625C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSapp" */;
 			buildPhases = (
-				0F80B50C25C078A6006A4B74 /* Sources */,
-				0F80B50D25C078A6006A4B74 /* Frameworks */,
-				0F80B50E25C078A6006A4B74 /* Resources */,
+				0FF70E7825C07C6800E37CC5 /* Sources */,
+				0FF70E7925C07C6800E37CC5 /* Frameworks */,
+				0FF70E7A25C07C6800E37CC5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MyVk_IOSapp;
-			productName = MyVk_IOSapp;
-			productReference = 0F80B51025C078A6006A4B74 /* MyVk_IOSapp.app */;
+			name = MyVK_IOSapp;
+			productName = MyVK_IOSapp;
+			productReference = 0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F80B52125C078A7006A4B74 /* MyVk_IOSappTests */ = {
+		0FF70E9125C07C6900E37CC5 /* MyVK_IOSappTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F80B53925C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSappTests" */;
+			buildConfigurationList = 0FF70EA925C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSappTests" */;
 			buildPhases = (
-				0F80B51E25C078A7006A4B74 /* Sources */,
-				0F80B51F25C078A7006A4B74 /* Frameworks */,
-				0F80B52025C078A7006A4B74 /* Resources */,
+				0FF70E8E25C07C6900E37CC5 /* Sources */,
+				0FF70E8F25C07C6900E37CC5 /* Frameworks */,
+				0FF70E9025C07C6900E37CC5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0F80B52425C078A7006A4B74 /* PBXTargetDependency */,
+				0FF70E9425C07C6900E37CC5 /* PBXTargetDependency */,
 			);
-			name = MyVk_IOSappTests;
-			productName = MyVk_IOSappTests;
-			productReference = 0F80B52225C078A7006A4B74 /* MyVk_IOSappTests.xctest */;
+			name = MyVK_IOSappTests;
+			productName = MyVK_IOSappTests;
+			productReference = 0FF70E9225C07C6900E37CC5 /* MyVK_IOSappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0F80B52C25C078A7006A4B74 /* MyVk_IOSappUITests */ = {
+		0FF70E9C25C07C6900E37CC5 /* MyVK_IOSappUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F80B53C25C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSappUITests" */;
+			buildConfigurationList = 0FF70EAC25C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSappUITests" */;
 			buildPhases = (
-				0F80B52925C078A7006A4B74 /* Sources */,
-				0F80B52A25C078A7006A4B74 /* Frameworks */,
-				0F80B52B25C078A7006A4B74 /* Resources */,
+				0FF70E9925C07C6900E37CC5 /* Sources */,
+				0FF70E9A25C07C6900E37CC5 /* Frameworks */,
+				0FF70E9B25C07C6900E37CC5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0F80B52F25C078A7006A4B74 /* PBXTargetDependency */,
+				0FF70E9F25C07C6900E37CC5 /* PBXTargetDependency */,
 			);
-			name = MyVk_IOSappUITests;
-			productName = MyVk_IOSappUITests;
-			productReference = 0F80B52D25C078A7006A4B74 /* MyVk_IOSappUITests.xctest */;
+			name = MyVK_IOSappUITests;
+			productName = MyVK_IOSappUITests;
+			productReference = 0FF70E9D25C07C6900E37CC5 /* MyVK_IOSappUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0F80B50825C078A6006A4B74 /* Project object */ = {
+		0FF70E7425C07C6800E37CC5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
-					0F80B50F25C078A6006A4B74 = {
+					0FF70E7B25C07C6800E37CC5 = {
 						CreatedOnToolsVersion = 12.1;
 					};
-					0F80B52125C078A7006A4B74 = {
+					0FF70E9125C07C6900E37CC5 = {
 						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 0F80B50F25C078A6006A4B74;
+						TestTargetID = 0FF70E7B25C07C6800E37CC5;
 					};
-					0F80B52C25C078A7006A4B74 = {
+					0FF70E9C25C07C6900E37CC5 = {
 						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 0F80B50F25C078A6006A4B74;
+						TestTargetID = 0FF70E7B25C07C6800E37CC5;
 					};
 				};
 			};
-			buildConfigurationList = 0F80B50B25C078A6006A4B74 /* Build configuration list for PBXProject "MyVk_IOSapp" */;
+			buildConfigurationList = 0FF70E7725C07C6800E37CC5 /* Build configuration list for PBXProject "MyVK_IOSapp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -210,36 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 0F80B50725C078A6006A4B74;
-			productRefGroup = 0F80B51125C078A6006A4B74 /* Products */;
+			mainGroup = 0FF70E7325C07C6800E37CC5;
+			productRefGroup = 0FF70E7D25C07C6800E37CC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F80B50F25C078A6006A4B74 /* MyVk_IOSapp */,
-				0F80B52125C078A7006A4B74 /* MyVk_IOSappTests */,
-				0F80B52C25C078A7006A4B74 /* MyVk_IOSappUITests */,
+				0FF70E7B25C07C6800E37CC5 /* MyVK_IOSapp */,
+				0FF70E9125C07C6900E37CC5 /* MyVK_IOSappTests */,
+				0FF70E9C25C07C6900E37CC5 /* MyVK_IOSappUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0F80B50E25C078A6006A4B74 /* Resources */ = {
+		0FF70E7A25C07C6800E37CC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F80B51825C078A7006A4B74 /* Assets.xcassets in Resources */,
-				0F80B51B25C078A7006A4B74 /* Main.storyboard in Resources */,
+				0FF70E8C25C07C6900E37CC5 /* LaunchScreen.storyboard in Resources */,
+				0FF70E8925C07C6900E37CC5 /* Assets.xcassets in Resources */,
+				0FF70E8725C07C6800E37CC5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B52025C078A7006A4B74 /* Resources */ = {
+		0FF70E9025C07C6900E37CC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B52B25C078A7006A4B74 /* Resources */ = {
+		0FF70E9B25C07C6900E37CC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,59 +254,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0F80B50C25C078A6006A4B74 /* Sources */ = {
+		0FF70E7825C07C6800E37CC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F80B51625C078A6006A4B74 /* ViewController.swift in Sources */,
-				0F80B51425C078A6006A4B74 /* AppDelegate.swift in Sources */,
+				0FF70E8425C07C6800E37CC5 /* ViewController.swift in Sources */,
+				0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */,
+				0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B51E25C078A7006A4B74 /* Sources */ = {
+		0FF70E8E25C07C6900E37CC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F80B52725C078A7006A4B74 /* MyVk_IOSappTests.swift in Sources */,
+				0FF70E9725C07C6900E37CC5 /* MyVK_IOSappTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F80B52925C078A7006A4B74 /* Sources */ = {
+		0FF70E9925C07C6900E37CC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F80B53225C078A7006A4B74 /* MyVk_IOSappUITests.swift in Sources */,
+				0FF70EA225C07C6900E37CC5 /* MyVK_IOSappUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0F80B52425C078A7006A4B74 /* PBXTargetDependency */ = {
+		0FF70E9425C07C6900E37CC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F80B50F25C078A6006A4B74 /* MyVk_IOSapp */;
-			targetProxy = 0F80B52325C078A7006A4B74 /* PBXContainerItemProxy */;
+			target = 0FF70E7B25C07C6800E37CC5 /* MyVK_IOSapp */;
+			targetProxy = 0FF70E9325C07C6900E37CC5 /* PBXContainerItemProxy */;
 		};
-		0F80B52F25C078A7006A4B74 /* PBXTargetDependency */ = {
+		0FF70E9F25C07C6900E37CC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F80B50F25C078A6006A4B74 /* MyVk_IOSapp */;
-			targetProxy = 0F80B52E25C078A7006A4B74 /* PBXContainerItemProxy */;
+			target = 0FF70E7B25C07C6800E37CC5 /* MyVK_IOSapp */;
+			targetProxy = 0FF70E9E25C07C6900E37CC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0F80B51925C078A7006A4B74 /* Main.storyboard */ = {
+		0FF70E8525C07C6800E37CC5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0F80B51A25C078A7006A4B74 /* Base */,
+				0FF70E8625C07C6800E37CC5 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FF70E8A25C07C6900E37CC5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FF70E8B25C07C6900E37CC5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0F80B53425C078A7006A4B74 /* Debug */ = {
+		0FF70EA425C07C6900E37CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,17 +366,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		0F80B53525C078A7006A4B74 /* Release */ = {
+		0FF70EA525C07C6900E37CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -407,181 +421,178 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0F80B53725C078A7006A4B74 /* Debug */ = {
+		0FF70EA725C07C6900E37CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyVk_IOSapp/MyVk_IOSapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MyVk_IOSapp/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0F80B53825C078A7006A4B74 /* Release */ = {
+		0FF70EA825C07C6900E37CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyVk_IOSapp/MyVk_IOSapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MyVk_IOSapp/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		0F80B53A25C078A7006A4B74 /* Debug */ = {
+		0FF70EAA25C07C6900E37CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				INFOPLIST_FILE = MyVk_IOSappTests/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSappTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSappTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSappTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyVk_IOSapp.app/Contents/MacOS/MyVk_IOSapp";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyVK_IOSapp.app/MyVK_IOSapp";
 			};
 			name = Debug;
 		};
-		0F80B53B25C078A7006A4B74 /* Release */ = {
+		0FF70EAB25C07C6900E37CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				INFOPLIST_FILE = MyVk_IOSappTests/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSappTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSappTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSappTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyVk_IOSapp.app/Contents/MacOS/MyVk_IOSapp";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyVK_IOSapp.app/MyVK_IOSapp";
 			};
 			name = Release;
 		};
-		0F80B53D25C078A7006A4B74 /* Debug */ = {
+		0FF70EAD25C07C6900E37CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				INFOPLIST_FILE = MyVk_IOSappUITests/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSappUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSappUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSappUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MyVk_IOSapp;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyVK_IOSapp;
 			};
 			name = Debug;
 		};
-		0F80B53E25C078A7006A4B74 /* Release */ = {
+		0FF70EAE25C07C6900E37CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D6N8LTG83H;
-				INFOPLIST_FILE = MyVk_IOSappUITests/Info.plist;
+				INFOPLIST_FILE = MyVK_IOSappUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.Vkapp.MyVk-IOSappUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LessonsSwift.VKapp.MyVK-IOSappUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MyVk_IOSapp;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyVK_IOSapp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F80B50B25C078A6006A4B74 /* Build configuration list for PBXProject "MyVk_IOSapp" */ = {
+		0FF70E7725C07C6800E37CC5 /* Build configuration list for PBXProject "MyVK_IOSapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F80B53425C078A7006A4B74 /* Debug */,
-				0F80B53525C078A7006A4B74 /* Release */,
+				0FF70EA425C07C6900E37CC5 /* Debug */,
+				0FF70EA525C07C6900E37CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F80B53625C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSapp" */ = {
+		0FF70EA625C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F80B53725C078A7006A4B74 /* Debug */,
-				0F80B53825C078A7006A4B74 /* Release */,
+				0FF70EA725C07C6900E37CC5 /* Debug */,
+				0FF70EA825C07C6900E37CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F80B53925C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSappTests" */ = {
+		0FF70EA925C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSappTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F80B53A25C078A7006A4B74 /* Debug */,
-				0F80B53B25C078A7006A4B74 /* Release */,
+				0FF70EAA25C07C6900E37CC5 /* Debug */,
+				0FF70EAB25C07C6900E37CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F80B53C25C078A7006A4B74 /* Build configuration list for PBXNativeTarget "MyVk_IOSappUITests" */ = {
+		0FF70EAC25C07C6900E37CC5 /* Build configuration list for PBXNativeTarget "MyVK_IOSappUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F80B53D25C078A7006A4B74 /* Debug */,
-				0F80B53E25C078A7006A4B74 /* Release */,
+				0FF70EAD25C07C6900E37CC5 /* Debug */,
+				0FF70EAE25C07C6900E37CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0F80B50825C078A6006A4B74 /* Project object */;
+	rootObject = 0FF70E7425C07C6800E37CC5 /* Project object */;
 }
