@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F50DFF625C96E0100AC54C5 /* MainMenuTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */; };
+		0F50E00625C980FD00AC54C5 /* CommunitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E00525C980FD00AC54C5 /* CommunitiesTableViewController.swift */; };
+		0F50E00B25C9812E00AC54C5 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E00A25C9812E00AC54C5 /* FriendsTableViewController.swift */; };
+		0F50E01325C9940400AC54C5 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E01225C9940400AC54C5 /* LoginFormController.swift */; };
+		0F50E01825C9981800AC54C5 /* FriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E01725C9981800AC54C5 /* FriendCollectionViewController.swift */; };
 		0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */; };
 		0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */; };
 		0FF70E8425C07C6800E37CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8325C07C6800E37CC5 /* ViewController.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTabbarController.swift; sourceTree = "<group>"; };
+		0F50E00525C980FD00AC54C5 /* CommunitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesTableViewController.swift; sourceTree = "<group>"; };
+		0F50E00A25C9812E00AC54C5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		0F50E01225C9940400AC54C5 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		0F50E01725C9981800AC54C5 /* FriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewController.swift; sourceTree = "<group>"; };
 		0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +86,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F50DFF425C96D7B00AC54C5 /* TabbarControlles */ = {
+			isa = PBXGroup;
+			children = (
+				0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */,
+			);
+			path = TabbarControlles;
+			sourceTree = "<group>";
+		};
+		0F50DFFD25C96E4900AC54C5 /* TableControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F50E00525C980FD00AC54C5 /* CommunitiesTableViewController.swift */,
+				0F50E00A25C9812E00AC54C5 /* FriendsTableViewController.swift */,
+			);
+			path = TableControllers;
+			sourceTree = "<group>";
+		};
+		0F50E00125C96E6100AC54C5 /* CollectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F50E01725C9981800AC54C5 /* FriendCollectionViewController.swift */,
+			);
+			path = CollectionControllers;
+			sourceTree = "<group>";
+		};
 		0FF70E7325C07C6800E37CC5 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +134,9 @@
 		0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXGroup;
 			children = (
+				0F50E00125C96E6100AC54C5 /* CollectionControllers */,
+				0F50DFFD25C96E4900AC54C5 /* TableControllers */,
+				0F50DFF425C96D7B00AC54C5 /* TabbarControlles */,
 				0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */,
 				0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */,
 				0FF70E8325C07C6800E37CC5 /* ViewController.swift */,
@@ -106,6 +144,7 @@
 				0FF70E8825C07C6900E37CC5 /* Assets.xcassets */,
 				0FF70E8A25C07C6900E37CC5 /* LaunchScreen.storyboard */,
 				0FF70E8D25C07C6900E37CC5 /* Info.plist */,
+				0F50E01225C9940400AC54C5 /* LoginFormController.swift */,
 			);
 			path = MyVK_IOSapp;
 			sourceTree = "<group>";
@@ -259,6 +298,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF70E8425C07C6800E37CC5 /* ViewController.swift in Sources */,
+				0F50DFF625C96E0100AC54C5 /* MainMenuTabbarController.swift in Sources */,
+				0F50E01825C9981800AC54C5 /* FriendCollectionViewController.swift in Sources */,
+				0F50E01325C9940400AC54C5 /* LoginFormController.swift in Sources */,
+				0F50E00B25C9812E00AC54C5 /* FriendsTableViewController.swift in Sources */,
+				0F50E00625C980FD00AC54C5 /* CommunitiesTableViewController.swift in Sources */,
 				0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */,
 				0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */,
 			);
