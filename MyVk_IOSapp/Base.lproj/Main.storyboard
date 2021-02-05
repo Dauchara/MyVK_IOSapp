@@ -142,15 +142,15 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="15J-1H-MQZ"/>
-                    <navigationItem key="navigationItem" title="Друзья" id="zTn-yD-hkR">
-                        <barButtonItem key="backBarButtonItem" title="Друзья" id="VNI-lk-weC"/>
+                    <navigationItem key="navigationItem" id="zTn-yD-hkR" userLabel="Друзья">
+                        <barButtonItem key="backBarButtonItem" title="Друзья" id="vFq-Tz-QEr"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-63-FZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.2" y="-1299.400299850075"/>
         </scene>
-        <!--Friend Collection View Controller-->
+        <!--Друг-->
         <scene sceneID="bnx-aw-WmI">
             <objects>
                 <collectionViewController storyboardIdentifier="friendViewController" id="jot-cq-oAT" customClass="FriendCollectionViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,7 +179,7 @@
                             <outlet property="delegate" destination="jot-cq-oAT" id="Gog-O3-6Ru"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="kc7-no-2Hs"/>
+                    <navigationItem key="navigationItem" title="Друг" id="kc7-no-2Hs"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QtE-Kv-cOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
