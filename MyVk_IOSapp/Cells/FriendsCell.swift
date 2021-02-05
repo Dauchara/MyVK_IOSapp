@@ -9,6 +9,8 @@ import UIKit
 
 class FriendsCell: UITableViewCell {
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
