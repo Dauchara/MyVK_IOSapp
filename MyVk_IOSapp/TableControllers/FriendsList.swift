@@ -1,14 +1,14 @@
 //
-//  FriendsTableViewController.swift
+//  FriendsList.swift
 //  MyVK_IOSapp
 //
-//  Created by Ниязов Ринат Раимжанович on 2/6/21.
+//  Created by Ниязов Ринат Раимжанович on 2/5/21.
 //
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
-
+class FriendsList: UITableViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,5 +85,5 @@ class FriendsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
