@@ -33,3 +33,22 @@ class Group {
         ]
     }
 }
+
+class RecommendGroup {
+    var recommendGroups = [GroupModel]()
+    
+    init() {
+        setup()
+    }
+    
+    func setup() {
+        recommendGroups = [
+            GroupModel(id: 8, name: "Рек группа 1", mainPhoto: UIImage(named: "RecGroup1")!),
+            GroupModel(id: 9, name: "Рек группа 2", mainPhoto: UIImage(named: "RecGroup1")!),
+            GroupModel(id: 10, name: "Рек группа 3", mainPhoto: UIImage(named: "RecGroup1")!),
+            GroupModel(id: 11, name: "Рек группа 4", mainPhoto: UIImage(named: "RecGroup1")!),
+            GroupModel(id: 12, name: "Рек группа 5", mainPhoto: UIImage(named: "RecGroup1")!),
+            GroupModel(id: 13, name: "Рек группа 6", mainPhoto: UIImage(named: "RecGroup1")!)
+        ]
+    }
+}

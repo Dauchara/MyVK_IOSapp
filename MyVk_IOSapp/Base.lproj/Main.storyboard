@@ -235,7 +235,7 @@
         <!--Рекомендации-->
         <scene sceneID="82M-xV-94m">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="r8h-Yd-qNn" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="r8h-Yd-qNn" customClass="RecommendGroupsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CyQ-2h-wXR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,7 +244,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UIL-s0-YE1">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UIL-s0-YE1" id="381-VV-oWI">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="recommendGroupCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UIL-s0-YE1" id="381-VV-oWI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -258,6 +258,9 @@
                     <navigationItem key="navigationItem" title="Рекомендации" id="8s0-1Q-lgQ">
                         <barButtonItem key="backBarButtonItem" title="Сообщества" id="IIT-w1-8H2"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recommendGroupsTableVC" destination="CyQ-2h-wXR" id="x6z-Nw-lRE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r74-I6-CZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
