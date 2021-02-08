@@ -47,6 +47,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="friendMainPhoto" destination="QJt-sG-73H" id="Vd8-ht-ojS"/>
                 <outlet property="friendName" destination="GVd-nl-Oh0" id="0Dl-T7-qCk"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="115.84821428571428"/>

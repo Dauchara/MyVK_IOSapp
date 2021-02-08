@@ -10,7 +10,7 @@ import UIKit
 class FriendsViewCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
-    
+    @IBOutlet weak var friendMainPhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +21,17 @@ class FriendsViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.friendName.text = nil
+        self.friendMainPhoto.image = nil
+    }
+    
+    func setupCell(user:UserModel){
+        self.friendName.text = "\(user.fName) \(user.sName)"
+        self.friendMainPhoto.image = user.mainPhoto
     }
     
 }

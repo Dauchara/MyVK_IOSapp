@@ -9,13 +9,7 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
-    let friends = [
-        "Imya Familya",
-        "Eshe Odin",
-        "Thor Odinson",
-        "Intel Kukuruzen",
-        "Geralt Witcher"
-    ]
+    let userList = User()
     
     @IBOutlet var friendsTableView: UITableView!
     
@@ -34,19 +28,19 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.friends.count
+        return self.userList.users.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsViewCell
-        cell.friendName.text = self.friends[indexPath.row]
+        let user = userList.users[indexPath.row]
+        cell.setupCell(user: user)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRow(at: indexPath)! as 
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     /*
     // Override to support conditional editing of the table view.
