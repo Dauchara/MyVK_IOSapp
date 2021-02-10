@@ -10,11 +10,15 @@ import UIKit
 class FriendCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var userPhoto: UIImageView!
+    @IBOutlet weak var likeButton: UIImageView!
+    @IBOutlet weak var likeCounter: UILabel!
+    @IBOutlet weak var commentButton: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -24,5 +28,5 @@ class FriendCollectionViewCell: UICollectionViewCell {
     func setupCell(userPhoto:UIImage){
         self.userPhoto.image = userPhoto
     }
-
+    
 }
