@@ -118,7 +118,7 @@
         <!--Друзья-->
         <scene sceneID="uLv-oH-qJq">
             <objects>
-                <tableViewController title="Друзья" id="Qsy-gw-IdO" customClass="FriendsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Друзья" modalPresentationStyle="fullScreen" id="Qsy-gw-IdO" customClass="FriendsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vt1-qR-70U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,20 +162,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GYf-0L-h5A">
-                            <size key="itemSize" width="373" height="308"/>
+                            <size key="itemSize" width="373" height="441"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Q8y-vZ-HAh">
-                                <rect key="frame" x="0.0" y="117" width="373" height="308"/>
+                                <rect key="frame" x="0.0" y="50.5" width="373" height="441"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NKj-cb-cOq">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="308"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="441"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="373" height="308"/>
+                                <size key="customSize" width="373" height="441"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -190,7 +190,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QtE-Kv-cOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3762" y="-1365"/>
+            <point key="canvasLocation" x="3760.8000000000002" y="-1365.0674662668666"/>
         </scene>
         <!--Сообщества-->
         <scene sceneID="flp-Om-keH">
