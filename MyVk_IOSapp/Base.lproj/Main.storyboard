@@ -1,24 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Form Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginFormController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="jZL-mn-3pT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1o6-SK-JWg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВКонтакте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEG-m1-clx">
+                                                <rect key="frame" x="145.5" y="153" width="84" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5RM-N5-Erv">
+                                                <rect key="frame" x="66" y="340" width="243" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKq-fE-emr">
+                                                <rect key="frame" x="165.5" y="405" width="44" height="30"/>
+                                                <state key="normal" title="Войти"/>
+                                                <connections>
+                                                    <segue destination="yR6-k8-U3r" kind="show" id="SLw-QF-Iao"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона / Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqY-gf-wR2">
+                                                <rect key="frame" x="66.5" y="285" width="242" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="iqY-gf-wR2" firstAttribute="top" secondItem="pEG-m1-clx" secondAttribute="bottom" constant="111" id="1aF-bZ-vhz"/>
+                                            <constraint firstItem="5RM-N5-Erv" firstAttribute="width" secondItem="1o6-SK-JWg" secondAttribute="width" multiplier="0.648" id="HAQ-GA-uYn"/>
+                                            <constraint firstItem="5RM-N5-Erv" firstAttribute="top" secondItem="iqY-gf-wR2" secondAttribute="bottom" constant="21" id="PsU-CH-llm"/>
+                                            <constraint firstItem="pEG-m1-clx" firstAttribute="top" secondItem="1o6-SK-JWg" secondAttribute="top" constant="153" id="Zs9-ZO-8e0"/>
+                                            <constraint firstItem="pEG-m1-clx" firstAttribute="centerX" secondItem="1o6-SK-JWg" secondAttribute="centerX" id="dih-HC-SEs"/>
+                                            <constraint firstAttribute="bottom" secondItem="fKq-fE-emr" secondAttribute="bottom" constant="232" id="km6-j1-glg"/>
+                                            <constraint firstItem="5RM-N5-Erv" firstAttribute="centerX" secondItem="1o6-SK-JWg" secondAttribute="centerX" id="nGq-A2-G3J"/>
+                                            <constraint firstItem="iqY-gf-wR2" firstAttribute="width" secondItem="1o6-SK-JWg" secondAttribute="width" multiplier="0.645333" id="ngR-KI-8pY"/>
+                                            <constraint firstItem="iqY-gf-wR2" firstAttribute="centerX" secondItem="1o6-SK-JWg" secondAttribute="centerX" id="pX6-Uc-l9s"/>
+                                            <constraint firstItem="fKq-fE-emr" firstAttribute="centerX" secondItem="1o6-SK-JWg" secondAttribute="centerX" id="rMe-rW-kJH"/>
+                                            <constraint firstItem="fKq-fE-emr" firstAttribute="top" secondItem="5RM-N5-Erv" secondAttribute="bottom" constant="31" id="xlu-Ul-9Q4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1o6-SK-JWg" secondAttribute="bottom" id="63e-FD-7hV"/>
+                                    <constraint firstItem="1o6-SK-JWg" firstAttribute="width" secondItem="jZL-mn-3pT" secondAttribute="width" id="797-mM-GXR"/>
+                                    <constraint firstItem="1o6-SK-JWg" firstAttribute="top" secondItem="jZL-mn-3pT" secondAttribute="top" id="R0J-Rd-w7J"/>
+                                    <constraint firstItem="1o6-SK-JWg" firstAttribute="leading" secondItem="jZL-mn-3pT" secondAttribute="leading" id="cOx-jV-kDq"/>
+                                    <constraint firstAttribute="trailing" secondItem="1o6-SK-JWg" secondAttribute="trailing" id="xrr-dw-fH4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="G8T-ls-R65"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="0Sl-Kj-lqL"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jZL-mn-3pT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="10s-xN-5u6"/>
+                            <constraint firstItem="jZL-mn-3pT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="DXA-qF-alK"/>
+                            <constraint firstAttribute="bottom" secondItem="jZL-mn-3pT" secondAttribute="bottom" id="UFS-lD-e8g"/>
+                            <constraint firstAttribute="trailing" secondItem="jZL-mn-3pT" secondAttribute="trailing" id="bZ2-c9-dgS"/>
+                            <constraint firstItem="jZL-mn-3pT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cJU-43-jUO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="89B-JE-i7R">
+                        <barButtonItem key="backBarButtonItem" title="Выход" id="ghN-I3-Cvn"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginInput" destination="iqY-gf-wR2" id="ig4-if-RHx"/>
+                        <outlet property="passwordInput" destination="5RM-N5-Erv" id="KZx-um-vyp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="-1000.7496251874064"/>
+        </scene>
+        <!--Сообщества-->
+        <scene sceneID="Fj6-sL-LIn">
+            <objects>
+                <tabBarController title="Сообщества" modalPresentationStyle="fullScreen" id="yR6-k8-U3r" customClass="MainMenuController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="izN-lI-MpT"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xXd-K2-Czd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cyk-wm-Rji" kind="relationship" relationship="viewControllers" id="IAx-3Z-aOC"/>
+                        <segue destination="wyR-Mx-yI9" kind="relationship" relationship="viewControllers" id="x52-Ye-kK0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wk-bS-j4z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="-1001.649175412294"/>
+        </scene>
+        <!--Друзья-->
+        <scene sceneID="uLv-oH-qJq">
+            <objects>
+                <tableViewController title="Друзья" modalPresentationStyle="fullScreen" id="Qsy-gw-IdO" customClass="FriendsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vt1-qR-70U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="UdW-Ui-0m1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="friendCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UdW-Ui-0m1" id="PuT-yV-XLP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jot-cq-oAT" kind="show" identifier="friendPageSegue" trigger="accessoryAction" id="FiN-nK-GGq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qsy-gw-IdO" id="0vn-js-uYT"/>
+                            <outlet property="delegate" destination="Qsy-gw-IdO" id="oRN-CR-PWz"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="15J-1H-MQZ"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="zTn-yD-hkR" userLabel="Друзья">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eDu-V9-9Dm"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="friendsTableView" destination="Vt1-qR-70U" id="vrI-mu-kB6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-63-FZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2849" y="-1365"/>
+        </scene>
+        <!--Друг-->
+        <scene sceneID="bnx-aw-WmI">
+            <objects>
+                <collectionViewController storyboardIdentifier="friendViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jot-cq-oAT" customClass="FriendCollectionViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="Zou-ke-aNX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GYf-0L-h5A">
+                            <size key="itemSize" width="373" height="441"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Q8y-vZ-HAh">
+                                <rect key="frame" x="0.0" y="50.5" width="373" height="441"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NKj-cb-cOq">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="441"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="373" height="441"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="jot-cq-oAT" id="uAe-d1-fev"/>
+                            <outlet property="delegate" destination="jot-cq-oAT" id="Gog-O3-6Ru"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Друг" id="kc7-no-2Hs"/>
+                    <connections>
+                        <outlet property="friendCollectionVC" destination="Zou-ke-aNX" id="7dF-8J-pfk"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QtE-Kv-cOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3760.8000000000002" y="-1365.0674662668666"/>
+        </scene>
+        <!--Сообщества-->
+        <scene sceneID="flp-Om-keH">
+            <objects>
+                <tableViewController title="Сообщества" modalPresentationStyle="fullScreen" id="eXs-yS-0Kd" customClass="GroupsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GZg-OQ-POD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uX2-9Y-okm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="groupCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX2-9Y-okm" id="oYp-3G-jFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eXs-yS-0Kd" id="AhN-jk-wjq"/>
+                            <outlet property="delegate" destination="eXs-yS-0Kd" id="8Gd-W3-IeY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Сообщества" image="person.3" catalog="system" id="bou-DG-C8M"/>
+                    <navigationItem key="navigationItem" title="Сообщества" id="hOj-x6-y4O">
+                        <barButtonItem key="backBarButtonItem" title=" " id="sln-g0-Q3I"/>
+                        <barButtonItem key="rightBarButtonItem" title="Рекомендации" image="plus" catalog="system" id="jIi-WQ-iv9">
+                            <connections>
+                                <segue destination="r8h-Yd-qNn" kind="show" id="tpC-V6-mn1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groupsTableView" destination="GZg-OQ-POD" id="TtB-J5-L0F"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqp-4U-n1k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2849" y="-638"/>
+        </scene>
+        <!--Рекомендации-->
+        <scene sceneID="82M-xV-94m">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="r8h-Yd-qNn" customClass="RecommendGroupsTableViewController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CyQ-2h-wXR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UIL-s0-YE1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="recommendGroupCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UIL-s0-YE1" id="381-VV-oWI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r8h-Yd-qNn" id="16C-fa-y4B"/>
+                            <outlet property="delegate" destination="r8h-Yd-qNn" id="oL4-Jf-pER"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Рекомендации" id="8s0-1Q-lgQ">
+                        <barButtonItem key="backBarButtonItem" title="Сообщества" id="IIT-w1-8H2"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recommendGroupsTableVC" destination="CyQ-2h-wXR" id="x6z-Nw-lRE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r74-I6-CZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3762" y="-639"/>
+        </scene>
+        <!--Друзья-->
+        <scene sceneID="UuP-tN-A9f">
+            <objects>
+                <navigationController title="Друзья" modalPresentationStyle="fullScreen" id="cyk-wm-Rji" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="1d5-Nz-qKY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eXw-ae-EWz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qsy-gw-IdO" kind="relationship" relationship="rootViewController" id="b36-ED-WD7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuF-n2-c5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="-1365"/>
+        </scene>
+        <!--Сообщества-->
+        <scene sceneID="nGg-Cj-tyS">
+            <objects>
+                <navigationController id="wyR-Mx-yI9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Сообщества" image="person.3" catalog="system" id="21x-Cp-ZtX"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXr-LI-AZk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eXs-yS-0Kd" kind="relationship" relationship="rootViewController" id="972-4Z-9gl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Pt-eg-Ifd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="-638"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
