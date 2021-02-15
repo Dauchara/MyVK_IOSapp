@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3D7D3125DA830A0010E7D5 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D7D3025DA830A0010E7D5 /* LikeControl.swift */; };
 		0F3FAC5825D19D53009534FA /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3FAC5725D19D53009534FA /* GroupsTableViewController.swift */; };
 		0F3FAC5E25D1A39C009534FA /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3FAC5C25D1A39C009534FA /* GroupsTableViewCell.swift */; };
 		0F3FAC5F25D1A39C009534FA /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3FAC5D25D1A39C009534FA /* GroupsTableViewCell.xib */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F3D7D3025DA830A0010E7D5 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		0F3FAC5725D19D53009534FA /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		0F3FAC5C25D1A39C009534FA /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		0F3FAC5D25D1A39C009534FA /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3D7D2F25DA82DA0010E7D5 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				0F3D7D3025DA830A0010E7D5 /* LikeControl.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		0F50DFF425C96D7B00AC54C5 /* TabbarControlles */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXGroup;
 			children = (
+				0F3D7D2F25DA82DA0010E7D5 /* Controls */,
 				0F63D93E25CE07A0004D5F00 /* Model */,
 				0F63D92E25CDCD7E004D5F00 /* Cells */,
 				0F50E00125C96E6100AC54C5 /* CollectionControllers */,
@@ -350,6 +361,7 @@
 				0F63D93025CDCDCA004D5F00 /* FriendsTableViewController.swift in Sources */,
 				0F3FAC5825D19D53009534FA /* GroupsTableViewController.swift in Sources */,
 				0F3FAC6425D1AA31009534FA /* RecommendGroupsTableViewController.swift in Sources */,
+				0F3D7D3125DA830A0010E7D5 /* LikeControl.swift in Sources */,
 				0F50E01825C9981800AC54C5 /* FriendCollectionViewController.swift in Sources */,
 				0F3FAC5E25D1A39C009534FA /* GroupsTableViewCell.swift in Sources */,
 				0F50E01325C9940400AC54C5 /* LoginFormController.swift in Sources */,
