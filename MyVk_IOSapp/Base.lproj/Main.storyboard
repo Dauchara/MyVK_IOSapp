@@ -154,6 +154,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="friendsTableView" destination="Vt1-qR-70U" id="vrI-mu-kB6"/>
+                        <outlet property="searchBar" destination="hfc-3v-frp" id="ERj-4d-21Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-63-FZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
