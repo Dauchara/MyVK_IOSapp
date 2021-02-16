@@ -14,7 +14,8 @@ class FriendsTableViewController: UITableViewController {
     @IBOutlet var friendsTableView: UITableView!
     let searchBar = UISearchBar()
     
-    let userList = User()
+    var userList = [UserModel]()
+    var groupedFriends = [[UserModel]]()
     var searchedFriends = [UserModel]()
     var searching = false
     
@@ -42,34 +43,44 @@ class FriendsTableViewController: UITableViewController {
         
         friendsTableView.tableHeaderView = searchBar
         
+        userList = User().users
+        createFirstDigitHeader()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        if searching {
+            return self.searchedFriends.count
+        } else {
+            return userList.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if searching {
-            return self.searchedFriends.count
-        } else {
-            return self.userList.users.count
-        }
+//        if searching {
+//            return self.searchedFriends[section].count
+//        } else {
+        return self.groupedFriends[section].count
+//        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsViewCell
-        if searching {
-            let user = self.searchedFriends[indexPath.row]
-            cell.setupCell(user: user)
-        } else {
-            let user = userList.users[indexPath.row]
-            cell.setupCell(user: user)
+//        if searching {
+//            let user = self.searchedFriends[indexPath.section][indexPath.row]
+//            cell.setupCell(user: user)
+//        } else {
+        if indexPath.row == 0 {
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
+            view?.textLabel?.text = String(groupedFriends[indexPath.section][indexPath.row].fName.prefix(1))
         }
+        let user = groupedFriends[indexPath.section][indexPath.row]
+        cell.setupCell(user: user)
+//        }
         return cell
     }
     
@@ -80,25 +91,56 @@ class FriendsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! FriendCollectionViewController
-        let index = tableView.indexPathForSelectedRow?.row
-        vc.userId = userList.users[index ?? 0].id
+        
+        let index = friendsTableView.indexPathForSelectedRow?.row
+        vc.userId = groupedFriends[0][index ?? 0].id
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+    
+    func createFirstDigitHeader() {
+        groupedFriends.removeAll()
+        
+        if searching {
+            for index in 0..<searchedFriends.count {
+                let tempSymbol = String(searchedFriends[index].fName.prefix(1)).lowercased()
+                
+                let tempItems = searchedFriends.filter { $0.fName.lowercased().prefix(1) == tempSymbol }
+                
+                for item in tempItems {
+                    groupedFriends[index].append(item)
+                    searchedFriends.removeAll(where: ({ $0.fName == item.fName }))
+                }
+            }
+        } else {
+            var tempUserList = userList
+            for index in 0..<tempUserList.count {
+                let tempSymbol = String(tempUserList[index].fName.prefix(1)).lowercased()
+                
+                let tempItems = tempUserList.filter { $0.fName.lowercased().prefix(1) == tempSymbol }
+                
+                for item in tempItems {
+                    groupedFriends[index].append(item)
+                    tempUserList.removeAll(where: ({ $0.fName == item.fName }))
+                }
+            }
+        }
     }
 
 }
 
 extension FriendsTableViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchedFriends = userList.users.filter { $0.sName.lowercased().prefix(searchText.count) == searchText.lowercased() }
-        searching = true
+        searchedFriends = userList.filter { $0.sName.lowercased().prefix(searchText.count) == searchText.lowercased() }
+//        searching = true
+        createFirstDigitHeader()
         tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searching = false
+//        searching = false
         searchBar.text = ""
         tableView.reloadData()
     }
