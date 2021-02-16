@@ -10,8 +10,9 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
 
     
-    @IBOutlet var searchBar: UISearchBar!
+//    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var friendsTableView: UITableView!
+    let searchBar = UISearchBar()
     
     let userList = User()
     var searchedFriends = [UserModel]()
@@ -19,7 +20,8 @@ class FriendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.hidesBarsOnSwipe = true
         friendsTableView.register(UINib(nibName: "FriendsViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         
         // сохраним для истории))
@@ -31,9 +33,15 @@ class FriendsTableViewController: UITableViewController {
 //        let glassIconView = searchTextField.leftView as! UIImageView
 //                glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
 //                glassIconView.tintColor = UIColor.red
-        
-        self.searchBar.showsCancelButton = true
+        self.searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
         self.searchBar.delegate = self
+        self.searchBar.showsCancelButton = true
+        self.searchBar.searchBarStyle = UISearchBar.Style.default
+        self.searchBar.placeholder = "Поиск"
+        self.searchBar.sizeToFit()
+        
+        friendsTableView.tableHeaderView = searchBar
+        
     }
 
     // MARK: - Table view data source
