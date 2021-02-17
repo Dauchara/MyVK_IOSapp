@@ -30,11 +30,12 @@ class User {
     
     func setup() {
         let user1 = UserModel(id: 1, sName: "Задирайнес", fName: "Эд", mainPhoto: UIImage(named: "Ed1")!)
-        let user2 = UserModel(id: 1, sName: "Серый", fName: "Геральт", mainPhoto: UIImage(named: "Geralt2")!)
-        let user3 = UserModel(id: 1, sName: "Чакраборти", fName: "Митхун", mainPhoto: UIImage(named: "Mithun1")!)
-        let user4 = UserModel(id: 1, sName: "Максимов", fName: "Ванда", mainPhoto: UIImage(named: "Wanda1")!)
-        let user5 = UserModel(id: 1, sName: "Шан", fName: "Сатель", mainPhoto: UIImage(named: "Satel1")!)
-        self.users = [user1,user2,user3,user4,user5]
+        let user2 = UserModel(id: 2, sName: "Серый", fName: "Геральт", mainPhoto: UIImage(named: "Geralt2")!)
+        let user3 = UserModel(id: 3, sName: "Чакраборти", fName: "Митхун", mainPhoto: UIImage(named: "Mithun1")!)
+        let user4 = UserModel(id: 4, sName: "Максимов", fName: "Ванда", mainPhoto: UIImage(named: "Wanda1")!)
+        let user5 = UserModel(id: 5, sName: "Шан", fName: "Сатель", mainPhoto: UIImage(named: "Satel1")!)
+        let user6 = UserModel(id: 6, sName: "ЗШан", fName: "ЭСатель", mainPhoto: UIImage(named: "Satel2")!)
+        self.users = [user1,user2,user3,user4,user5,user6]
     }
 }
 

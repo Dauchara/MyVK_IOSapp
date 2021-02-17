@@ -12,6 +12,8 @@
 		0F3FAC5E25D1A39C009534FA /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3FAC5C25D1A39C009534FA /* GroupsTableViewCell.swift */; };
 		0F3FAC5F25D1A39C009534FA /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3FAC5D25D1A39C009534FA /* GroupsTableViewCell.xib */; };
 		0F3FAC6425D1AA31009534FA /* RecommendGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3FAC6325D1AA31009534FA /* RecommendGroupsTableViewController.swift */; };
+		0F4CF10825DCF18F0044FB22 /* FriendsCustomSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CF10725DCF18F0044FB22 /* FriendsCustomSectionHeader.swift */; };
+		0F4CF11025DCF1F50044FB22 /* FriendsCustomSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4CF10F25DCF1F50044FB22 /* FriendsCustomSectionHeader.xib */; };
 		0F50DFF625C96E0100AC54C5 /* MainMenuTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */; };
 		0F50E01325C9940400AC54C5 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E01225C9940400AC54C5 /* LoginFormController.swift */; };
 		0F50E01825C9981800AC54C5 /* FriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50E01725C9981800AC54C5 /* FriendCollectionViewController.swift */; };
@@ -55,6 +57,8 @@
 		0F3FAC5C25D1A39C009534FA /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		0F3FAC5D25D1A39C009534FA /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 		0F3FAC6325D1AA31009534FA /* RecommendGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendGroupsTableViewController.swift; sourceTree = "<group>"; };
+		0F4CF10725DCF18F0044FB22 /* FriendsCustomSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCustomSectionHeader.swift; sourceTree = "<group>"; };
+		0F4CF10F25DCF1F50044FB22 /* FriendsCustomSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCustomSectionHeader.xib; sourceTree = "<group>"; };
 		0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTabbarController.swift; sourceTree = "<group>"; };
 		0F50E01225C9940400AC54C5 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		0F50E01725C9981800AC54C5 /* FriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 				0F3D7D3025DA830A0010E7D5 /* LikeControl.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		0F4CF10625DCF1050044FB22 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				0F4CF10725DCF18F0044FB22 /* FriendsCustomSectionHeader.swift */,
+				0F4CF10F25DCF1F50044FB22 /* FriendsCustomSectionHeader.xib */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		0F50DFF425C96D7B00AC54C5 /* TabbarControlles */ = {
@@ -185,6 +198,7 @@
 		0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXGroup;
 			children = (
+				0F4CF10625DCF1050044FB22 /* Friends */,
 				0F3D7D2F25DA82DA0010E7D5 /* Controls */,
 				0F63D93E25CE07A0004D5F00 /* Model */,
 				0F63D92E25CDCD7E004D5F00 /* Cells */,
@@ -324,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4CF11025DCF1F50044FB22 /* FriendsCustomSectionHeader.xib in Resources */,
 				0F63D94C25CE0921004D5F00 /* FriendCollectionViewCell.xib in Resources */,
 				0F3FAC5F25D1A39C009534FA /* GroupsTableViewCell.xib in Resources */,
 				0FF70E8C25C07C6900E37CC5 /* LaunchScreen.storyboard in Resources */,
@@ -368,6 +383,7 @@
 				0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */,
 				0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */,
 				0F63D94025CE07CE004D5F00 /* User.swift in Sources */,
+				0F4CF10825DCF18F0044FB22 /* FriendsCustomSectionHeader.swift in Sources */,
 				0F63D93925CDF27A004D5F00 /* FriendsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
