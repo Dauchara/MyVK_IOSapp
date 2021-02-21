@@ -80,6 +80,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentPhoto" destination="fl5-A5-hDm" id="YmY-Oe-kk3"/>
+                <outlet property="contentText" destination="n8E-Fm-6OZ" id="6On-Uh-jY8"/>
+                <outlet property="nameOfGroupOrUser" destination="VZo-k9-ag7" id="Ros-ny-Mag"/>
+                <outlet property="photoGroupOrUser" destination="E0M-WF-Z45" id="Zhf-go-zYg"/>
+                <outlet property="photoView" destination="m0w-vR-OaV" id="OTU-fk-nbk"/>
+                <outlet property="publishDate" destination="amx-qk-o9w" id="nTY-XY-TPV"/>
+            </connections>
             <point key="canvasLocation" x="89.855072463768124" y="130.58035714285714"/>
         </tableViewCell>
     </objects>
