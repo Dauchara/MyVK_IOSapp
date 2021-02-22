@@ -28,6 +28,7 @@
 		0F63D94525CE07DC004D5F00 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F63D94425CE07DC004D5F00 /* Group.swift */; };
 		0F63D94B25CE0921004D5F00 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F63D94925CE0921004D5F00 /* FriendCollectionViewCell.swift */; };
 		0F63D94C25CE0921004D5F00 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F63D94A25CE0921004D5F00 /* FriendCollectionViewCell.xib */; };
+		0F64512925E39FDE0090155C /* DotsAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64512825E39FDE0090155C /* DotsAnimationViewController.swift */; };
 		0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */; };
 		0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */; };
 		0FF70E8425C07C6800E37CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8325C07C6800E37CC5 /* ViewController.swift */; };
@@ -77,6 +78,7 @@
 		0F63D94425CE07DC004D5F00 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		0F63D94925CE0921004D5F00 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F63D94A25CE0921004D5F00 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F64512825E39FDE0090155C /* DotsAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsAnimationViewController.swift; sourceTree = "<group>"; };
 		0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				0FF70E8A25C07C6900E37CC5 /* LaunchScreen.storyboard */,
 				0FF70E8D25C07C6900E37CC5 /* Info.plist */,
 				0F50E01225C9940400AC54C5 /* LoginFormController.swift */,
+				0F64512825E39FDE0090155C /* DotsAnimationViewController.swift */,
 			);
 			path = MyVK_IOSapp;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				0F4CF12725DE2F890044FB22 /* News.swift in Sources */,
 				0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */,
 				0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */,
+				0F64512925E39FDE0090155C /* DotsAnimationViewController.swift in Sources */,
 				0F63D94025CE07CE004D5F00 /* User.swift in Sources */,
 				0F4CF10825DCF18F0044FB22 /* FriendsCustomSectionHeader.swift in Sources */,
 				0F63D93925CDF27A004D5F00 /* FriendsViewCell.swift in Sources */,
