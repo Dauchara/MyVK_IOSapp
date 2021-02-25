@@ -10,13 +10,14 @@ import UIKit
 class FriendsViewCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
-    @IBOutlet weak var friendMainPhoto: UIView!
+    @IBOutlet weak var friendMainPhoto: UIControl!
     @IBOutlet weak var photo: UIImageView!
     var imageTemp = UIImage(named: "deadVK")!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        self.friendMainPhoto.addTarget(self, action: #selector(photoAnimation), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,6 +52,20 @@ class FriendsViewCell: UITableViewCell {
 //        self.friendMainPhoto.layer.transform = rotation3D
 //        self.friendMainPhoto.layer.transform = scale3D
 
+    }
+    
+    @objc
+    func photoAnimation() {
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.stiffness = 200
+        animation.mass = 200
+        animation.duration = 2
+        animation.beginTime = CACurrentMediaTime() + 1
+        animation.fillMode = CAMediaTimingFillMode.backwards
+        
+        self.friendMainPhoto.layer.add(animation, forKey: nil)
     }
     
 }
