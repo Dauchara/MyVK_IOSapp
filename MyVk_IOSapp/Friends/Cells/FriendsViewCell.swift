@@ -37,6 +37,7 @@ class FriendsViewCell: UITableViewCell {
         self.photo.image = user.mainPhoto
         self.photo.applyshadowWithCorner(containerView: self.friendMainPhoto, cornerRadious: 30)
         self.photo.layer.contentsGravity = CALayerContentsGravity.resize
+        friendCellAnimation()
 //        self.friendMainPhoto.layer.masksToBounds = false
 //        self.friendMainPhoto.layer.cornerRadius = 30
 //        self.friendMainPhoto.layer.shadowOffset = CGSize(width: 10,height: 10)
@@ -60,7 +61,7 @@ class FriendsViewCell: UITableViewCell {
         animation.fromValue = 0
         animation.toValue = 1
         animation.stiffness = 200
-        animation.mass = 200
+        animation.mass = 100
         animation.duration = 2
         animation.beginTime = CACurrentMediaTime() + 1
         animation.fillMode = CAMediaTimingFillMode.backwards
@@ -68,6 +69,18 @@ class FriendsViewCell: UITableViewCell {
         self.friendMainPhoto.layer.add(animation, forKey: nil)
     }
     
+    func friendCellAnimation() {
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.stiffness = 200
+        animation.mass = 200
+        animation.duration = 2
+        animation.beginTime = CACurrentMediaTime() + 1
+        animation.fillMode = CAMediaTimingFillMode.backwards
+        
+        self.layer.add(animation, forKey: nil)
+    }
 }
 
 extension UIImageView {
