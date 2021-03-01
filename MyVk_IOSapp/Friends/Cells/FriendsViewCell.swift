@@ -10,14 +10,15 @@ import UIKit
 class FriendsViewCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
-    @IBOutlet weak var friendMainPhoto: UIControl!
+    @IBOutlet var friendMainPhoto: UIControl!
     @IBOutlet weak var photo: UIImageView!
     var imageTemp = UIImage(named: "deadVK")!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        self.friendMainPhoto.addTarget(self, action: #selector(photoAnimation), for: .touchUpInside)
+        self.friendMainPhoto.addTarget(self, action: #selector(photoAnimation), for: .touchUpInside)
+//        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,12 +59,12 @@ class FriendsViewCell: UITableViewCell {
     @objc
     func photoAnimation() {
         let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0
+        animation.fromValue = 0.9
         animation.toValue = 1
-        animation.stiffness = 200
-        animation.mass = 100
+        animation.stiffness = 500
+        animation.mass = 10
         animation.duration = 2
-        animation.beginTime = CACurrentMediaTime() + 1
+        animation.beginTime = CACurrentMediaTime()-0.5
         animation.fillMode = CAMediaTimingFillMode.backwards
         
         self.friendMainPhoto.layer.add(animation, forKey: nil)
@@ -71,12 +72,12 @@ class FriendsViewCell: UITableViewCell {
     
     func friendCellAnimation() {
         let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0
+        animation.fromValue = 0.8
         animation.toValue = 1
-        animation.stiffness = 200
-        animation.mass = 200
+        animation.stiffness = 500
+        animation.mass = 50
         animation.duration = 2
-        animation.beginTime = CACurrentMediaTime() + 1
+        animation.beginTime = CACurrentMediaTime()-0.3
         animation.fillMode = CAMediaTimingFillMode.backwards
         
         self.layer.add(animation, forKey: nil)

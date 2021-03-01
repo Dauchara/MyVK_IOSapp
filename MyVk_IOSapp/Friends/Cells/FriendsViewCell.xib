@@ -27,7 +27,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU6-MI-twY">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU6-MI-twY" customClass="UIControl">
                         <rect key="frame" x="5" y="3" width="60" height="60"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X29-Cx-Glr">
@@ -80,7 +80,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="friendMainPhoto" destination="JU6-MI-twY" id="D9j-w6-reG"/>
+                <outlet property="friendMainPhoto" destination="JU6-MI-twY" id="tjs-nD-sW5"/>
                 <outlet property="friendName" destination="GVd-nl-Oh0" id="0Dl-T7-qCk"/>
                 <outlet property="photo" destination="X29-Cx-Glr" id="dYp-p1-ZxW"/>
             </connections>
