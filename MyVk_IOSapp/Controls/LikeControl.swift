@@ -1,10 +1,3 @@
-//
-//  LikeControl.swift
-//  MyVK_IOSapp
-//
-//  Created by Ниязов Ринат Раимжанович on 2/15/21.
-//
-
 import UIKit
 
 final class LikeControl: UIControl {
