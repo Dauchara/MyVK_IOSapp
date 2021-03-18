@@ -32,6 +32,10 @@ class LoginFormController: UIViewController {
         guard let login = loginInput.text, let password = passwordInput.text else { return false }
         
         if login == "admin" && password == "123" {
+            let session = Session.instance
+            session.token="rgr54rttv56gtrvb56hybgjmku7hjik87u6yhbre"
+            session.userId=23
+            
             return true
         } else {
             return false
