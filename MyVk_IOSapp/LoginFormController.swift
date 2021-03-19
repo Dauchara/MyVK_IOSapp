@@ -16,16 +16,6 @@ class LoginFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let parameters: Parameters = [
-            "q": "München,DE",
-            "appid": "b1b15e88fa797225412429c1c50c122a1"
-        ]
-        
-        AF.request("https://samples.openweathermap.org/data/2.5/forecast?q=Moscow,DE&appid=b1b15e88fa797225412429c1c50c122a1").responseJSON { response in
-                
-                print(response.value)
-                
-            }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
