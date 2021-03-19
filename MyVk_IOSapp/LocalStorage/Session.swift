@@ -1,7 +1,7 @@
 import Foundation
 
-class Session {
-    static let instance = Session()
+class CustomSession {
+    static let instance = CustomSession()
     
     private init(){}
     

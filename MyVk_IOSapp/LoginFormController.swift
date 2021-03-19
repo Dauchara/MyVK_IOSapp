@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginFormController: UIViewController {
    
@@ -15,7 +16,16 @@ class LoginFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let parameters: Parameters = [
+            "q": "München,DE",
+            "appid": "b1b15e88fa797225412429c1c50c122a1"
+        ]
+        
+        AF.request("https://samples.openweathermap.org/data/2.5/forecast?q=Moscow,DE&appid=b1b15e88fa797225412429c1c50c122a1").responseJSON { response in
+                
+                print(response.value)
+                
+            }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -32,7 +42,7 @@ class LoginFormController: UIViewController {
         guard let login = loginInput.text, let password = passwordInput.text else { return false }
         
         if login == "admin" && password == "123" {
-            let session = Session.instance
+            let session = CustomSession.instance
             session.token="rgr54rttv56gtrvb56hybgjmku7hjik87u6yhbre"
             session.userId=23
             
@@ -59,3 +69,12 @@ class LoginFormController: UIViewController {
     */
 
 }
+
+//extension Session {
+//    static let custom: Session = {
+//        let configuration = URLSessionConfiguration.default
+//        configuration.httpAdditionalHeaders = Session.defaul
+//
+//        let sessionManager = Session(configuration: configuration, delegate: <#T##SessionDelegate#>, rootQueue: <#T##DispatchQueue#>, startRequestsImmediately: <#T##Bool#>, requestQueue: <#T##DispatchQueue?#>, serializationQueue: <#T##DispatchQueue?#>, interceptor: <#T##RequestInterceptor?#>, serverTrustManager: <#T##ServerTrustManager?#>, redirectHandler: <#T##RedirectHandler?#>, cachedResponseHandler: <#T##CachedResponseHandler?#>, eventMonitors: <#T##[EventMonitor]#>)
+//    }()
+//}
