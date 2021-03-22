@@ -11,7 +11,7 @@ class Friends {
             "access_token": session.token,
             "v": "5.130",
             "order": "name",
-            "count": "200",
+            "count": "50",
             "offset": "5",
             "fields": "city,domain,photo_50",
             "name_case": "nom",

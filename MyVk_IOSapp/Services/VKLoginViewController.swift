@@ -74,5 +74,6 @@ extension VKLoginViewController: WKNavigationDelegate{
         
         let groups = Groups()
         groups.Get()
+        groups.Search("GeekBrains")
     }
 }
