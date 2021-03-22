@@ -68,6 +68,11 @@ extension VKLoginViewController: WKNavigationDelegate{
         session.userId = Int(userId!) ?? 0
         
         decisionHandler(.cancel)
+     
+        let friends = Friends()
+        friends.Get()
+        
+        let groups = Groups()
+        groups.Get()
     }
-
 }

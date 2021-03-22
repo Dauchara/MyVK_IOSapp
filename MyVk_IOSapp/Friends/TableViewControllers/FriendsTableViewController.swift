@@ -35,6 +35,10 @@ class FriendsTableViewController: UITableViewController {
 //        let glassIconView = searchTextField.leftView as! UIImageView
 //                glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
 //                glassIconView.tintColor = UIColor.red
+        
+        let friends = Friends()
+        friends.Get()
+        
         self.searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
         self.searchBar.delegate = self
         self.searchBar.showsCancelButton = true
