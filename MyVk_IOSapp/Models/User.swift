@@ -1,52 +1,72 @@
 import UIKit
+import Foundation
 
+class User: Codable {
+    let response: UserResponse
 
-struct UserModel {
-    var id:Int
-    var sName:String
-    var fName:String
-    var mainPhoto:UIImage
-}
-
-struct UserInfoModel {
-    var status:String
-    var photoList:Array<UIImage>?
-}
-
-class User {
-    var users = [UserModel]()
-    
-    init(){
-        setup()
-    }
-    
-    func setup() {
-        let user1 = UserModel(id: 1, sName: "Задирайнес", fName: "Эд", mainPhoto: UIImage(named: "Ed1")!)
-        let user2 = UserModel(id: 2, sName: "Серый", fName: "Геральт", mainPhoto: UIImage(named: "Geralt2")!)
-        let user3 = UserModel(id: 3, sName: "Чакраборти", fName: "Митхун", mainPhoto: UIImage(named: "Mithun1")!)
-        let user4 = UserModel(id: 4, sName: "Максимов", fName: "Ванда", mainPhoto: UIImage(named: "Wanda1")!)
-        let user5 = UserModel(id: 5, sName: "Шан", fName: "Сатель", mainPhoto: UIImage(named: "Satel1")!)
-        let user6 = UserModel(id: 6, sName: "ЗШан", fName: "ЭСатель", mainPhoto: UIImage(named: "Satel2")!)
-        self.users = [user1,user2,user3,user4,user5,user6]
+    init(response: UserResponse) {
+        self.response = response
     }
 }
 
-class UserInfo {
-    var userInfo = UserInfoModel(status: "", photoList: [UIImage(named:"deadVK")!])
-    
-    init(_ id:Int){
-        setup(id)
+// MARK: - Response
+class UserResponse: Codable {
+    let count: Int
+    let items: [UserItem]
+
+    init(count: Int, items: [UserItem]) {
+        self.count = count
+        self.items = items
     }
-    
-    func setup(_ id:Int) {
-        switch(id){
-        case 1 : self.userInfo = UserInfoModel(status: "Задирайнес", photoList: [UIImage(named: "Ed1")!, UIImage(named: "Ed2")!])
-        case 2 : self.userInfo = UserInfoModel(status: "Серый", photoList: [UIImage(named: "Geralt1")!, UIImage(named: "Geralt2")!])
-        case 3 : self.userInfo = UserInfoModel(status: "Чакраборти", photoList: [UIImage(named: "Mithun1")!, UIImage(named: "Mithun2")!])
-        case 4 : self.userInfo = UserInfoModel(status: "Максимов", photoList: [UIImage(named: "Wanda1")!, UIImage(named: "Wanda2")!])
-        case 5 : self.userInfo = UserInfoModel(status: "Шан", photoList: [UIImage(named: "Satel1")!, UIImage(named: "Satel2")!])
-        default:
-            self.userInfo = UserInfoModel(status: "none", photoList: [UIImage(named:"deadVK")!])
-        }
+}
+
+// MARK: - Item
+class UserItem: Codable {
+    let firstName: String
+    let id: Int
+    let lastName: String
+    let deactivated: String?
+    let photo50: String
+    let domain, trackCode: String
+    let canAccessClosed, isClosed: Bool?
+    let city: City?
+    let lists: [Int]?
+
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case id
+        case lastName = "last_name"
+        case deactivated
+        case photo50 = "photo_50"
+        case domain
+        case trackCode = "track_code"
+        case canAccessClosed = "can_access_closed"
+        case isClosed = "is_closed"
+        case city, lists
+    }
+
+    init(firstName: String, id: Int, lastName: String, deactivated: String?, photo50: String, domain: String, trackCode: String, canAccessClosed: Bool?, isClosed: Bool?, city: City?, lists: [Int]?) {
+        self.firstName = firstName
+        self.id = id
+        self.lastName = lastName
+        self.deactivated = deactivated
+        self.photo50 = photo50
+        self.domain = domain
+        self.trackCode = trackCode
+        self.canAccessClosed = canAccessClosed
+        self.isClosed = isClosed
+        self.city = city
+        self.lists = lists
+    }
+}
+
+// MARK: - City
+class City: Codable {
+    let id: Int
+    let title: String
+
+    init(id: Int, title: String) {
+        self.id = id
+        self.title = title
     }
 }

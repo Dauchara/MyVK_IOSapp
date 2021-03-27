@@ -46,7 +46,7 @@
         <!--Login Form Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginFormController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginMenu" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginFormController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Сообщества-->
         <scene sceneID="Fj6-sL-LIn">
             <objects>
-                <tabBarController title="Сообщества" modalPresentationStyle="fullScreen" id="yR6-k8-U3r" customClass="MainMenuController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainMenu" title="Сообщества" modalPresentationStyle="fullScreen" id="yR6-k8-U3r" customClass="MainMenuController" customModule="MyVK_IOSapp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="izN-lI-MpT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xXd-K2-Czd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

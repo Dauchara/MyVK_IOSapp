@@ -29,8 +29,8 @@ class GroupsTableViewCell: UITableViewCell {
         self.groupPhoto.image = nil
     }
     
-    func setupCell(group:GroupModel){
-        self.groupName.text = group.name
-        self.groupPhoto.image = group.mainPhoto
+    func setupCell(item:GroupItem){
+        self.groupName.text = item.name
+        self.groupPhoto.image = nil
     }
 }

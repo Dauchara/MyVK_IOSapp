@@ -36,6 +36,7 @@ class VKLoginViewController: UIViewController {
         let request = URLRequest(url: urlComponents.url!)
         
         webview.load(request)
+        
     }
     
 
@@ -60,20 +61,30 @@ extension VKLoginViewController: WKNavigationDelegate{
                 return dict
         }
         
-        let token = params["access_token"]
-        let userId = params["user_id"]
+        guard let token = params["access_token"],
+              let userId = params["user_id"],
+              let _ = Int(userId) else {
+            decisionHandler(.allow)
+            return
+        }
         
         let session = CustomSession.instance
-        session.token = token!
-        session.userId = Int(userId!) ?? 0
+        session.token = token
+        session.userId = Int(userId) ?? 0
         
         decisionHandler(.cancel)
      
-        let friends = Friends()
-        friends.Get()
+        let fs = FileServices()
+        fs.getImage(uri:"https://sun1.tele2-kz-almaty.userapi.com/s/v1/if1/nnzEtSGCaDv4vpPbnxYq_l1j7SVD1k6395ntqr3VKwwMMJs5RYgn0Nznb94x07oyMBQj3Jq8.jpg?size=50x0&quality=96&crop=104,198,519,519&ava=1")
         
-        let groups = Groups()
-        groups.Get()
-        groups.Search("GeekBrains")
+//        let friends = Friends()
+//        friends.Get()
+//
+//        let groups = Groups()
+//        groups.Get()
+//        groups.Search("GeekBrains")
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainMenu") as! MainMenuController
+        self.present(vc, animated: true, completion: nil)
     }
 }

@@ -1,46 +1,60 @@
 import UIKit
+import Foundation
 
-struct GroupModel {
-    var id: Int
-    var name: String
-    var mainPhoto: UIImage
-}
+class Group: Codable {
+    let response: GroupResponse
 
-class Group {
-    var groups = [GroupModel]()
-    
-    init(){
-        setup()
-    }
-    
-    func setup() {
-        groups = [
-            GroupModel(id: 1, name: "Группа 1", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 2, name: "Группа 2", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 3, name: "Группа 3", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 4, name: "Группа 4", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 5, name: "Группа 5", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 6, name: "Группа 6", mainPhoto: UIImage(named: "Group1")!),
-            GroupModel(id: 7, name: "Группа 7", mainPhoto: UIImage(named: "Group1")!)
-        ]
+    init(response: GroupResponse) {
+        self.response = response
     }
 }
 
-class RecommendGroup {
-    var recommendGroups = [GroupModel]()
-    
-    init() {
-        setup()
+// MARK: - Response
+class GroupResponse: Codable {
+    let count: Int
+    let items: [GroupItem]
+
+    init(count: Int, items: [GroupItem]) {
+        self.count = count
+        self.items = items
     }
-    
-    func setup() {
-        recommendGroups = [
-            GroupModel(id: 8, name: "Рек группа 1", mainPhoto: UIImage(named: "RecGroup1")!),
-            GroupModel(id: 9, name: "Рек группа 2", mainPhoto: UIImage(named: "RecGroup1")!),
-            GroupModel(id: 10, name: "Рек группа 3", mainPhoto: UIImage(named: "RecGroup1")!),
-            GroupModel(id: 11, name: "Рек группа 4", mainPhoto: UIImage(named: "RecGroup1")!),
-            GroupModel(id: 12, name: "Рек группа 5", mainPhoto: UIImage(named: "RecGroup1")!),
-            GroupModel(id: 13, name: "Рек группа 6", mainPhoto: UIImage(named: "RecGroup1")!)
-        ]
+}
+
+// MARK: - Item
+class GroupItem: Codable {
+    let id: Int
+    let name, screenName: String
+    let isClosed: Int
+    let type: TypeEnum
+    let isAdmin, isMember, isAdvertiser: Int
+    let photo50: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case screenName = "screen_name"
+        case isClosed = "is_closed"
+        case type
+        case isAdmin = "is_admin"
+        case isMember = "is_member"
+        case isAdvertiser = "is_advertiser"
+        case photo50 = "photo_50"
     }
+
+    init(id: Int, name: String, screenName: String, isClosed: Int, type: TypeEnum, isAdmin: Int, isMember: Int, isAdvertiser: Int, photo50: String) {
+        self.id = id
+        self.name = name
+        self.screenName = screenName
+        self.isClosed = isClosed
+        self.type = type
+        self.isAdmin = isAdmin
+        self.isMember = isMember
+        self.isAdvertiser = isAdvertiser
+        self.photo50 = photo50
+    }
+}
+
+enum TypeEnum: String, Codable {
+    case event = "event"
+    case group = "group"
+    case page = "page"
 }

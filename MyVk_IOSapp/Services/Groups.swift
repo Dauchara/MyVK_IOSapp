@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 class Groups {
-    func Get() -> [GroupModel]? {
+    func Get() -> Group? {
         let session = CustomSession.instance
         let path = "groups.get"
         
@@ -24,7 +24,7 @@ class Groups {
         return nil
     }
     
-    func Search(_ query: String) -> [GroupModel]? {
+    func Search(_ query: String) -> Group? {
         let session = CustomSession.instance
         let path = "groups.search"
         

@@ -3,7 +3,7 @@ import Alamofire
 
 class Friends {
     
-    func Get() -> [UserModel]? {
+    func Get() -> User? {
         let session = CustomSession.instance
         let path = "friends.get"
         
@@ -20,11 +20,18 @@ class Friends {
         
         let url = session.baseUrl + path
         
-        AF.request(url, method: .get, parameters: parameters).responseJSON { repsonse in
-            print(repsonse.value)
+        var usersAnswer: User? = nil
+        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: User.self) { (response) in
+            
+            guard let users = response.value else { return }
+            usersAnswer = users
+            print("GETTING !!!!")
+            print(usersAnswer)
         }
         
-        return nil
+        print("RETURNS !!!!")
+        print(usersAnswer)
+        return usersAnswer
     }
     
 }

@@ -32,6 +32,8 @@
 		0F64512925E39FDE0090155C /* DotsAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F64512825E39FDE0090155C /* DotsAnimationViewController.swift */; };
 		0F7374062604E27400545F5F /* VKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7374052604E27400545F5F /* VKLoginViewController.swift */; };
 		0F73740E2604E29100545F5F /* CustomSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73740D2604E29100545F5F /* CustomSession.swift */; };
+		0F955BB4260B125E009F62EC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F955BB3260B125E009F62EC /* WebKit.framework */; };
+		0F955BD1260CEF94009F62EC /* FileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F955BD0260CEF94009F62EC /* FileServices.swift */; };
 		0FF255B8260864900043237D /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF255B7260864900043237D /* Groups.swift */; };
 		0FF70E8025C07C6800E37CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */; };
 		0FF70E8225C07C6800E37CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */; };
@@ -89,6 +91,8 @@
 		0F64512825E39FDE0090155C /* DotsAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsAnimationViewController.swift; sourceTree = "<group>"; };
 		0F7374052604E27400545F5F /* VKLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginViewController.swift; sourceTree = "<group>"; };
 		0F73740D2604E29100545F5F /* CustomSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSession.swift; sourceTree = "<group>"; };
+		0F955BB3260B125E009F62EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0F955BD0260CEF94009F62EC /* FileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServices.swift; sourceTree = "<group>"; };
 		0FF255B7260864900043237D /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F955BB4260B125E009F62EC /* WebKit.framework in Frameworks */,
 				9D71B5280EC1D837DD4E912B /* Pods_MyVK_IOSapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +155,7 @@
 				0F73740D2604E29100545F5F /* CustomSession.swift */,
 				0F34E8562605CFB0005192BE /* Friends.swift */,
 				0FF255B7260864900043237D /* Groups.swift */,
+				0F955BD0260CEF94009F62EC /* FileServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -297,12 +303,12 @@
 		0FF70E7E25C07C6800E37CC5 /* MyVK_IOSapp */ = {
 			isa = PBXGroup;
 			children = (
+				0F63D93E25CE07A0004D5F00 /* Models */,
 				0F0F9896260397EF009430B4 /* Services */,
 				0F4CF11A25DE2DFB0044FB22 /* News */,
 				0F4CF10625DCF1050044FB22 /* Friends */,
 				0F4CF11B25DE2E010044FB22 /* Groups */,
 				0F3D7D2F25DA82DA0010E7D5 /* Controls */,
-				0F63D93E25CE07A0004D5F00 /* Models */,
 				0F50DFF425C96D7B00AC54C5 /* TabbarControlles */,
 				0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */,
 				0FF70E8125C07C6800E37CC5 /* SceneDelegate.swift */,
@@ -338,6 +344,7 @@
 		399F2888A3C4C8C42C48FD04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F955BB3260B125E009F62EC /* WebKit.framework */,
 				9104A5E4F83EE8F54CC94758 /* Pods_MyVK_IOSapp.framework */,
 				71F3FFC1B224354EE8B2CFE4 /* Pods_MyVK_IOSapp_MyVK_IOSappUITests.framework */,
 				A12111F2A705D4B2A4A78052 /* Pods_MyVK_IOSappTests.framework */,
@@ -613,6 +620,7 @@
 				0F3D7D3125DA830A0010E7D5 /* LikeControl.swift in Sources */,
 				0F7374062604E27400545F5F /* VKLoginViewController.swift in Sources */,
 				0F50E01825C9981800AC54C5 /* FriendCollectionViewController.swift in Sources */,
+				0F955BD1260CEF94009F62EC /* FileServices.swift in Sources */,
 				0F3FAC5E25D1A39C009534FA /* GroupsTableViewCell.swift in Sources */,
 				0F50E01325C9940400AC54C5 /* LoginFormController.swift in Sources */,
 				0F4CF12725DE2F890044FB22 /* News.swift in Sources */,
