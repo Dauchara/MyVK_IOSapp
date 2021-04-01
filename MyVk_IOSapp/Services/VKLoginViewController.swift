@@ -74,16 +74,6 @@ extension VKLoginViewController: WKNavigationDelegate{
         
         decisionHandler(.cancel)
      
-        let fs = FileServices()
-        fs.getImage(uri:"https://sun1.tele2-kz-almaty.userapi.com/s/v1/if1/nnzEtSGCaDv4vpPbnxYq_l1j7SVD1k6395ntqr3VKwwMMJs5RYgn0Nznb94x07oyMBQj3Jq8.jpg?size=50x0&quality=96&crop=104,198,519,519&ava=1")
-        
-//        let friends = Friends()
-//        friends.Get()
-//
-//        let groups = Groups()
-//        groups.Get()
-//        groups.Search("GeekBrains")
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainMenu") as! MainMenuController
         self.present(vc, animated: true, completion: nil)
     }

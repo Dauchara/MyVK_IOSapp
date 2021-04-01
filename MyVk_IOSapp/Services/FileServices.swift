@@ -12,3 +12,12 @@ class FileServices {
         return imageBytes
     }
 }
+//
+//extension UIImageView {
+//    public func imageFromUrl(urlString: String) {
+//        if let url = NSURL(string: urlString){
+//            let request = NSURLRequest(URL: url)
+//            
+//        }
+//    }
+//}
