@@ -1,7 +1,8 @@
 import UIKit
 import Foundation
+import RealmSwift
 
-class Group: Codable {
+class Group: Object, Codable {
     let response: GroupResponse
 
     init(response: GroupResponse) {
@@ -10,24 +11,23 @@ class Group: Codable {
 }
 
 // MARK: - Response
-class GroupResponse: Codable {
-    let count: Int
-    let items: [GroupItem]
+class GroupResponse: Object, Codable {
+    @objc dynamic var count: Int
+    var items = List<GroupItem>()
 
-    init(count: Int, items: [GroupItem]) {
+    init(count: Int) {
         self.count = count
-        self.items = items
     }
 }
 
 // MARK: - Item
-class GroupItem: Codable {
-    let id: Int
-    let name, screenName: String
-    let isClosed: Int
-    let type: TypeEnum
-    let isAdmin, isMember, isAdvertiser: Int
-    let photo50: String
+class GroupItem: Object, Codable {
+    @objc dynamic var  id: Int
+    @objc dynamic var  name, screenName: String
+    @objc dynamic var  isClosed: Int
+    dynamic var type: TypeEnum
+    @objc dynamic var  isAdmin, isMember, isAdvertiser: Int
+    @objc dynamic var  photo50: String
 
     enum CodingKeys: String, CodingKey {
         case id, name

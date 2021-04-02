@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
 
@@ -166,7 +167,7 @@ extension FriendsTableViewController {
         AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: User.self) { (response) in
             
             guard let users = response.value else { return }
-            self.userList = users.response.items
+            self.userList = Array(users.response.items)
             self.createFirstDigitHeader(items: self.userList)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
