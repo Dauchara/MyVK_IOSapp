@@ -93,6 +93,9 @@
 		0F73740D2604E29100545F5F /* CustomSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSession.swift; sourceTree = "<group>"; };
 		0F955BB3260B125E009F62EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0F955BD0260CEF94009F62EC /* FileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServices.swift; sourceTree = "<group>"; };
+		0F955BDE261746DE009F62EC /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F955BE426174737009F62EC /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F955BFE26174E47009F62EC /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF255B7260864900043237D /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		0FF70E7C25C07C6800E37CC5 /* MyVK_IOSapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_IOSapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF70E7F25C07C6800E37CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -344,6 +347,9 @@
 		399F2888A3C4C8C42C48FD04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F955BFE26174E47009F62EC /* Realm.framework */,
+				0F955BE426174737009F62EC /* Realm.framework */,
+				0F955BDE261746DE009F62EC /* RealmSwift.framework */,
 				0F955BB3260B125E009F62EC /* WebKit.framework */,
 				9104A5E4F83EE8F54CC94758 /* Pods_MyVK_IOSapp.framework */,
 				71F3FFC1B224354EE8B2CFE4 /* Pods_MyVK_IOSapp_MyVK_IOSappUITests.framework */,

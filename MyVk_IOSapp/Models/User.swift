@@ -1,7 +1,8 @@
 import UIKit
 import Foundation
+import RealmSwift
 
-class User: Codable {
+class User: Object, Codable {
     let response: UserResponse
 
     init(response: UserResponse) {
@@ -11,26 +12,25 @@ class User: Codable {
 
 // MARK: - Response
 class UserResponse: Codable {
-    let count: Int
-    let items: [UserItem]
+    @objc dynamic var count: Int
+    var items = List<UserItem>()
 
-    init(count: Int, items: [UserItem]) {
+    init(count: Int) {
         self.count = count
-        self.items = items
     }
 }
 
 // MARK: - Item
-class UserItem: Codable {
-    let firstName: String
-    let id: Int
-    let lastName: String
-    let deactivated: String?
-    let photo50: String
-    let domain, trackCode: String
-    let canAccessClosed, isClosed: Bool?
-    let city: City?
-    let lists: [Int]?
+class UserItem: Object, Codable {
+    @objc dynamic var firstName: String
+    @objc dynamic var id: Int
+    @objc dynamic var lastName: String
+    @objc dynamic var deactivated: String?
+    @objc dynamic var photo50: String
+    @objc dynamic var domain, trackCode: String
+    @objc dynamic var canAccessClosed, isClosed: Bool
+    @objc dynamic var city: City?
+    @objc dynamic var lists: [Int]?
 
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
@@ -53,17 +53,17 @@ class UserItem: Codable {
         self.photo50 = photo50
         self.domain = domain
         self.trackCode = trackCode
-        self.canAccessClosed = canAccessClosed
-        self.isClosed = isClosed
+        self.canAccessClosed = canAccessClosed ?? false
+        self.isClosed = isClosed ?? false
         self.city = city
         self.lists = lists
     }
 }
 
 // MARK: - City
-class City: Codable {
-    let id: Int
-    let title: String
+class City:Object, Codable {
+    @objc dynamic var id: Int
+    @objc dynamic var title: String
 
     init(id: Int, title: String) {
         self.id = id

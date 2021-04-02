@@ -17,5 +17,5 @@ target 'MyVK_IOSapp' do
   end
 
   pod 'Alamofire', '~>5.4.1'
-
+  pod 'RealmSwift'
 end
