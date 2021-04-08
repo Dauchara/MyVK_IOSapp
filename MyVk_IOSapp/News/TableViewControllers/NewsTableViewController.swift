@@ -11,8 +11,8 @@ class NewsTableViewController: UITableViewController {
 
     @IBOutlet var NewsTableView: UITableView!
     let news = News()
-    let users = User()
-    let groups = Group()
+//    let users = User()
+//    let groups = Group()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +37,18 @@ class NewsTableViewController: UITableViewController {
         
         let content = news.news[indexPath.row]
         
-        if content.isGroup {
-            guard let group = self.groups.groups.first(where: { $0.id == content.ownerID }) else { return cell }
-            let owner = NewsOwnerModel(name: group.name, photo: group.mainPhoto)
-            cell.setupCell(news: content, newsOwner: owner)
-            return cell
-        } else {
-            guard let user = self.users.users.first(where: { $0.id == content.ownerID }) else { return cell }
-            let owner = NewsOwnerModel(name: "\(user.fName) \(user.sName)", photo: user.mainPhoto)
-            cell.setupCell(news: content, newsOwner: owner)
-            return cell
-        }
+//        if content.isGroup {
+//            guard let group = self.groups.groups.first(where: { $0.id == content.ownerID }) else { return cell }
+//            let owner = NewsOwnerModel(name: group.name, photo: group.mainPhoto)
+//            cell.setupCell(news: content, newsOwner: owner)
+//            return cell
+//        } else {
+//            guard let user = self.users.users.first(where: { $0.id == content.ownerID }) else { return cell }
+//            let owner = NewsOwnerModel(name: "\(user.fName) \(user.sName)", photo: user.mainPhoto)
+//            cell.setupCell(news: content, newsOwner: owner)
+//            return cell
+//        }
+        return cell
     }
 
 }

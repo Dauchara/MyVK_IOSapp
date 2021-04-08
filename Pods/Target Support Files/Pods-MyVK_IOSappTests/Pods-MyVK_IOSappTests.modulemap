@@ -1,0 +1,6 @@
+framework module Pods_MyVK_IOSappTests {
+  umbrella header "Pods-MyVK_IOSappTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

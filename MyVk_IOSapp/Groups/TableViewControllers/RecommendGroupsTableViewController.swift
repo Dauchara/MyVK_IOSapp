@@ -11,7 +11,7 @@ class RecommendGroupsTableViewController: UITableViewController {
 
     @IBOutlet var recommendGroupsTableVC: UITableView!
     
-    var recGroups = RecommendGroup()
+    var recGroups = [GroupItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,14 @@ class RecommendGroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return recGroups.recommendGroups.count
+        return recGroups.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recommendGroupCell", for: indexPath) as! GroupsTableViewCell
-        let recGroup = recGroups.recommendGroups[indexPath.row]
-        cell.setupCell(group: recGroup)
+        let recGroup = recGroups[indexPath.row]
+        cell.setupCell(item: recGroup)
         
         return cell
     }

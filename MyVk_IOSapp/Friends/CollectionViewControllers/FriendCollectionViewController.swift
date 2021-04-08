@@ -13,7 +13,7 @@ class FriendCollectionViewController: UICollectionViewController {
     
     @IBOutlet var friendCollectionVC: UICollectionView!
     var userId:Int = 0
-    var userInfo: UserInfo? = nil
+    var userInfo: UserItem? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class FriendCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.friendCollectionVC.register(UINib(nibName: "FriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
-        userInfo = UserInfo(userId)
+//        userInfo = UserInfo(userId)
     }
     
     // MARK: UICollectionViewDataSource
@@ -34,15 +34,15 @@ class FriendCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return userInfo?.userInfo.photoList?.count ?? 1
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendCollectionViewCell
         
-        let userPhoto = userInfo?.userInfo.photoList?[indexPath.row]
+        let userPhoto = UIImage(named: "deadVK")!
 //        let userPhoto: UIImage? = nil
-        cell.setupCell(userPhoto: userPhoto ?? UIImage(named: "deadVK")!)
+        cell.setupCell(userPhoto: userPhoto)
     
         return cell
     }

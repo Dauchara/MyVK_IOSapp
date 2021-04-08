@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
 
@@ -14,9 +16,9 @@ class FriendsTableViewController: UITableViewController {
     @IBOutlet var friendsTableView: UITableView!
     let searchBar = UISearchBar()
     
-    var userList = [UserModel]()
-    var groupedFriends = [[UserModel]]()
-    var searchedFriends = [UserModel]()
+    var userList = [UserItem]()
+    var groupedFriends = [[UserItem]]()
+    var searchedFriends = [UserItem]()
     var searching = false
     
     override func viewDidLoad() {
@@ -35,6 +37,12 @@ class FriendsTableViewController: UITableViewController {
 //        let glassIconView = searchTextField.leftView as! UIImageView
 //                glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
 //                glassIconView.tintColor = UIColor.red
+        
+//        let friends = Friends()
+//        let users = friends.Get()
+//        userList = users!.response.items
+        GetFriends()
+        
         self.searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
         self.searchBar.delegate = self
         self.searchBar.showsCancelButton = true
@@ -44,8 +52,7 @@ class FriendsTableViewController: UITableViewController {
         
         friendsTableView.tableHeaderView = searchBar
         
-        userList = User().users
-        createFirstDigitHeader()
+//        createFirstDigitHeader()
     }
 
     // MARK: - Table view data source
@@ -66,7 +73,7 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! FriendsCustomSectionHeader
-        view.headerText.text = String(groupedFriends[section][0].fName.prefix(1))
+        view.headerText.text = String(groupedFriends[section][0].firstName.prefix(1))
         return view
     }
     
@@ -78,7 +85,7 @@ class FriendsTableViewController: UITableViewController {
 //        } else {
         
         let user = groupedFriends[indexPath.section][indexPath.row]
-        cell.setupCell(user: user)
+        cell.setupCell(item: user)
 //        }
         return cell
     }
@@ -91,66 +98,40 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! FriendCollectionViewController
         
-        let index = friendsTableView.indexPathForSelectedRow?.row
-        vc.userId = groupedFriends[0][index ?? 0].id
+        let section = friendsTableView.indexPathForSelectedRow!.section
+        let row = friendsTableView.indexPathForSelectedRow!.row
+        vc.userId = groupedFriends[section][row].id
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
     
-    func createFirstDigitHeader() {
+    func createFirstDigitHeader(items: [UserItem]) {
         self.groupedFriends.removeAll()
-        var index = 0
-        var extraValues = 0
+        var index = -1
+        var oldTempSymbol: String = ""
         
-        if searching {
-            for item in self.searchedFriends {
-                let tempSymbol = String(item.fName.prefix(1)).lowercased()
-                
-                let tempItems = self.searchedFriends.filter { $0.fName.lowercased().prefix(1) == tempSymbol }
-                if tempItems.count > 1 {
-                    extraValues += tempItems.count - 1
-                }
-                
-                self.groupedFriends.append([])
-                for tempItem in tempItems {
-                    self.groupedFriends[index].append(tempItem)
-                    self.searchedFriends.removeAll(where: ({ $0.fName == tempItem.fName }))
-                }
-                index += 1
-            }
-        } else {
-            var tempUserList = self.userList
+        for item in items {
             
-            for item in tempUserList {
-                
-                let tempSymbol = String(item.fName.prefix(1)).lowercased()
-                
-                let tempItems = tempUserList.filter { $0.fName.lowercased().prefix(1) == tempSymbol }
-                if tempItems.count > 1 {
-                    extraValues += tempItems.count - 1
-                }
-                
+            let tempSymbol = String(item.firstName.prefix(1)).lowercased()
+            
+            if tempSymbol != oldTempSymbol {
+                oldTempSymbol = tempSymbol
                 self.groupedFriends.append([])
-                for tempItem in tempItems {
-                    self.groupedFriends[index].append(tempItem)
-                    tempUserList.removeAll(where: ({ $0.id == tempItem.id }))
-                }
                 index += 1
             }
+            self.groupedFriends[index].append(item)
         }
-        self.groupedFriends.removeLast(extraValues)
     }
-
 }
 
 extension FriendsTableViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
-            searchedFriends = userList.filter { $0.sName.lowercased().prefix(searchText.count) == searchText.lowercased() }
+            searchedFriends = userList.filter { $0.lastName.lowercased().prefix(searchText.count) == searchText.lowercased() }
             searching = true
-            createFirstDigitHeader()
+            createFirstDigitHeader(items: searchedFriends)
             tableView.reloadData()
         } else {
             searchBarCancelButtonClicked(searchBar) // Пришлось вызывать, так как не понимал почему не сбрасывается при пустом тексте
@@ -160,7 +141,37 @@ extension FriendsTableViewController : UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         searchBar.text = ""
-        createFirstDigitHeader()
+        createFirstDigitHeader(items: self.userList)
         tableView.reloadData()
+    }
+}
+
+extension FriendsTableViewController {
+    func GetFriends() {
+        let session = CustomSession.instance
+        let path = "friends.get"
+        
+        let parameters: Parameters = [
+            "access_token": session.token,
+            "v": "5.130",
+            "order": "name",
+            "count": "200",
+            "offset": "5",
+            "fields": "city,domain,photo_50",
+            "name_case": "nom",
+            "user_id": session.userId
+        ]
+        
+        let url = session.baseUrl + path
+        
+        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: User.self) { (response) in
+            
+            guard let users = response.value else { return }
+            self.userList = Array(users.response.items)
+            self.createFirstDigitHeader(items: self.userList)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

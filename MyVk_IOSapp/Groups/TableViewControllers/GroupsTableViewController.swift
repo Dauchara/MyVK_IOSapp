@@ -1,21 +1,16 @@
-//
-//  GroupsTableViewController.swift
-//  MyVK_IOSapp
-//
-//  Created by Ниязов Ринат Раимжанович on 2/8/21.
-//
-
 import UIKit
+import Alamofire
 
 class GroupsTableViewController: UITableViewController {
 
     @IBOutlet var groupsTableView: UITableView!
     
-    var groupList = Group()
+    var groupList = [GroupItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         groupsTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        GetGroups()
     }
 
     // MARK: - Table view data source
@@ -27,14 +22,14 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groupList.groups.count
+        return groupList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupsTableViewCell
-        let group = groupList.groups[indexPath.row]
-        cell.setupCell(group: group)
+        let group = groupList[indexPath.row]
+        cell.setupCell(item: group)
         return cell
     }
     
@@ -44,5 +39,57 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+extension GroupsTableViewController {
+    func GetGroups() {
+        let session = CustomSession.instance
+        let path = "groups.get"
+        
+        let parameters: Parameters = [
+            "access_token": session.token,
+            "v": "5.130",
+            "count": "200",
+            "extended":1,
+            "fields": "photo_50",
+            "user_id": session.userId
+        ]
+        
+        let url = session.baseUrl + path
+        
+        AF.request(url, method: .get, parameters: parameters).responseDecodable(of: Group.self) { (response) in
+            print(response.value)
+            guard let groups = response.value else { return }
+            self.groupList = groups.response.items
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func SearchGroups(_ query: String) {
+        let session = CustomSession.instance
+        let path = "groups.search"
+        
+        let parameters: Parameters = [
+            "access_token": session.token,
+            "v": "5.130",
+            "count": "20",
+            "fields": "photo_50",
+            "sort": "0",
+            "q": query
+        ]
+        
+        let url = session.baseUrl + path
+        
+        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: Group.self) { (response) in
+            
+            guard let groups = response.value else { return }
+            self.groupList = groups.response.items
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
