@@ -7,7 +7,7 @@
 
 import UIKit
 import Alamofire
-import RealmSwift
+//import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
 
@@ -73,7 +73,8 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! FriendsCustomSectionHeader
-        view.headerText.text = String(groupedFriends[section][0].firstName.prefix(1))
+        let name = String(groupedFriends[section][0].firstName!.prefix(1))
+        view.headerText.text = name
         return view
     }
     
@@ -100,7 +101,7 @@ class FriendsTableViewController: UITableViewController {
         
         let section = friendsTableView.indexPathForSelectedRow!.section
         let row = friendsTableView.indexPathForSelectedRow!.row
-        vc.userId = groupedFriends[section][row].id
+        vc.userId = groupedFriends[section][row].id.value ?? 0
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -114,7 +115,7 @@ class FriendsTableViewController: UITableViewController {
         
         for item in items {
             
-            let tempSymbol = String(item.firstName.prefix(1)).lowercased()
+            let tempSymbol = String(item.firstName!.prefix(1)).lowercased()
             
             if tempSymbol != oldTempSymbol {
                 oldTempSymbol = tempSymbol
@@ -129,7 +130,7 @@ class FriendsTableViewController: UITableViewController {
 extension FriendsTableViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
-            searchedFriends = userList.filter { $0.lastName.lowercased().prefix(searchText.count) == searchText.lowercased() }
+            searchedFriends = userList.filter { $0.lastName!.lowercased().prefix(searchText.count) == searchText.lowercased() }
             searching = true
             createFirstDigitHeader(items: searchedFriends)
             tableView.reloadData()
@@ -155,7 +156,7 @@ extension FriendsTableViewController {
             "access_token": session.token,
             "v": "5.130",
             "order": "name",
-            "count": "200",
+            "count": "50",
             "offset": "5",
             "fields": "city,domain,photo_50",
             "name_case": "nom",
@@ -164,10 +165,10 @@ extension FriendsTableViewController {
         
         let url = session.baseUrl + path
         
-        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: User.self) { (response) in
-            
+        AF.request(url, method: .get, parameters: parameters).responseDecodable(of: User.self) { (response) in
+            print(response)
             guard let users = response.value else { return }
-            self.userList = Array(users.response.items)
+            self.userList = users.response.items
             self.createFirstDigitHeader(items: self.userList)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -50,7 +50,7 @@ extension GroupsTableViewController {
         let parameters: Parameters = [
             "access_token": session.token,
             "v": "5.130",
-            "count": "200",
+            "count": "50",
             "extended":1,
             "fields": "photo_50",
             "user_id": session.userId
@@ -59,7 +59,7 @@ extension GroupsTableViewController {
         let url = session.baseUrl + path
         
         AF.request(url, method: .get, parameters: parameters).responseDecodable(of: Group.self) { (response) in
-            print(response.value)
+//            print(response.value)
             guard let groups = response.value else { return }
             self.groupList = groups.response.items
             DispatchQueue.main.async {

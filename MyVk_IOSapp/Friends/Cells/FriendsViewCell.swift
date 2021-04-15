@@ -34,7 +34,9 @@ class FriendsViewCell: UITableViewCell {
     }
     
     func setupCell(item:UserItem){
-        self.friendName.text = "\(item.firstName) \(item.lastName)"
+        let firstName = item.firstName
+        let lastName = item.lastName
+        self.friendName.text = "\(firstName) \(lastName)"
         self.photo.image = UIImage(named: "deadVK")
         self.photo.applyshadowWithCorner(containerView: self.friendMainPhoto, cornerRadious: 30)
         self.photo.layer.contentsGravity = CALayerContentsGravity.resize
