@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FriendsViewCell: UITableViewCell {
 
@@ -34,10 +35,14 @@ class FriendsViewCell: UITableViewCell {
     }
     
     func setupCell(item:UserItem){
-        let firstName = item.firstName
-        let lastName = item.lastName
+        let firstName = item.firstName!
+        let lastName = item.lastName!
+        let photoName = item.photo50!
         self.friendName.text = "\(firstName) \(lastName)"
-        self.photo.image = UIImage(named: "deadVK")
+//        self.photo.image = UIImage(named: "deadVK")
+        
+        fetchImage(photoName)
+        
         self.photo.applyshadowWithCorner(containerView: self.friendMainPhoto, cornerRadious: 30)
         self.photo.layer.contentsGravity = CALayerContentsGravity.resize
         friendCellAnimation()
@@ -84,15 +89,31 @@ class FriendsViewCell: UITableViewCell {
         
         self.layer.add(animation, forKey: nil)
     }
+    
+    private func fetchImage(_ urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let getDataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data:data)
+                self.photo.image = image
+            }
+        })
+    }
 }
 
 extension UIImageView {
     func applyshadowWithCorner(containerView : UIView, cornerRadious : CGFloat){
         containerView.clipsToBounds = false
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.7
-        containerView.layer.shadowOffset = CGSize(width: 5,height: 5)
-        containerView.layer.shadowRadius = 4
+        containerView.layer.shadowOpacity = 0.3
+        containerView.layer.shadowOffset = CGSize(width: 2,height: 2)
+        containerView.layer.shadowRadius = 3
         containerView.layer.cornerRadius = cornerRadious
         containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius: cornerRadious).cgPath
         self.clipsToBounds = true
