@@ -36,7 +36,8 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
         
         let content = news.news[indexPath.row]
-        
+        let owner = NewsOwnerModel(name: "", photo: UIImage(named: "deadVK"))
+        cell.setupCell()
 //        if content.isGroup {
 //            guard let group = self.groups.groups.first(where: { $0.id == content.ownerID }) else { return cell }
 //            let owner = NewsOwnerModel(name: group.name, photo: group.mainPhoto)

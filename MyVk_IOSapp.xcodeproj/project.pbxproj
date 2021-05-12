@@ -76,7 +76,7 @@
 		0F4CF10F25DCF1F50044FB22 /* FriendsCustomSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCustomSectionHeader.xib; sourceTree = "<group>"; };
 		0F4CF12125DE2F190044FB22 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		0F4CF12625DE2F890044FB22 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		0F4CF12B25DE3AC30044FB22 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		0F4CF12B25DE3AC30044FB22 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; tabWidth = 4; };
 		0F4CF12C25DE3AC30044FB22 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		0F50DFF525C96E0100AC54C5 /* MainMenuTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTabbarController.swift; sourceTree = "<group>"; };
 		0F50E01225C9940400AC54C5 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
