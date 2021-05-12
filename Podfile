@@ -18,4 +18,5 @@ target 'MyVK_IOSapp' do
 
   pod 'Alamofire', '~>5.4.1'
   pod 'RealmSwift'
+  pod 'SDWebImage'
 end

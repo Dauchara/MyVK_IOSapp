@@ -2,8 +2,8 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class Group: Object, Codable {
-    let response: GroupResponse
+class Group: Codable {
+    var response: GroupResponse
 
     init(response: GroupResponse) {
         self.response = response
@@ -11,9 +11,9 @@ class Group: Object, Codable {
 }
 
 // MARK: - Response
-class GroupResponse: Object, Codable {
-    @objc dynamic var count: Int
-    var items = List<GroupItem>()
+class GroupResponse: Codable {
+    var count: Int
+    var items = [GroupItem]()
 
     init(count: Int) {
         self.count = count
@@ -22,12 +22,15 @@ class GroupResponse: Object, Codable {
 
 // MARK: - Item
 class GroupItem: Object, Codable {
-    @objc dynamic var  id: Int
-    @objc dynamic var  name, screenName: String
-    @objc dynamic var  isClosed: Int
-    dynamic var type: TypeEnum
-    @objc dynamic var  isAdmin, isMember, isAdvertiser: Int
-    @objc dynamic var  photo50: String
+    var id = RealmOptional<Int>()
+    dynamic var  name: String? = ""
+    dynamic var screenName: String? = ""
+    dynamic var isClosed = RealmOptional<Int>()
+    dynamic var type: TypeEnum?
+    var isAdmin = RealmOptional<Int>()
+    var isMember = RealmOptional<Int>()
+    var isAdvertiser = RealmOptional<Int>()
+    dynamic var photo50: String? = ""
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -40,16 +43,24 @@ class GroupItem: Object, Codable {
         case photo50 = "photo_50"
     }
 
-    init(id: Int, name: String, screenName: String, isClosed: Int, type: TypeEnum, isAdmin: Int, isMember: Int, isAdvertiser: Int, photo50: String) {
-        self.id = id
-        self.name = name
-        self.screenName = screenName
-        self.isClosed = isClosed
-        self.type = type
-        self.isAdmin = isAdmin
-        self.isMember = isMember
-        self.isAdvertiser = isAdvertiser
-        self.photo50 = photo50
+//    init(id: RealmOptional<Int>, name: String, screenName: String, isClosed: RealmOptional<Int>, isAdmin: RealmOptional<Int>, isMember: RealmOptional<Int>, isAdvertiser: RealmOptional<Int>, photo50: String) {
+//        self.id = id
+//        self.name = name
+//        self.screenName = screenName
+//        self.isClosed = isClosed
+////        self.type = type
+//        self.isAdmin = isAdmin
+//        self.isMember = isMember
+//        self.isAdvertiser = isAdvertiser
+//        self.photo50 = photo50
+//    }
+    
+    override class func primaryKey() -> String? {
+        "id"
+    }
+    
+    override class func indexedProperties() -> [String] {
+        ["id", "screenName"]
     }
 }
 
