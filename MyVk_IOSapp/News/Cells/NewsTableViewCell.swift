@@ -61,9 +61,12 @@ class NewsTableViewCell: UITableViewCell {
     }()
     
     var currentLikes = 1000
-    lazy var likeButton = LikeControl(initialState: .disliked(self.currentLikes))
-    var isNeededToLike = true
-
+    var isLiked = true
+    lazy var likeButton: LikeControl = {
+        let likeButton = LikeControl(initialState: .disliked(self.currentLikes))
+        translatesAutoresizingMaskIntoConstraints = false
+        return likeButton
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -78,6 +81,13 @@ class NewsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+//        contentImageView.image = nil
+//        contentText.text = nil
+//        nameOfGroupOrUser.text = nil
+//        publishDate.text = nil
+//        iconImageView.image = nil
+//        likeButton.numberOfLikesLabel.text = "0"
+//        likeButton.imageView.image = UIImage(systemName: "heart")
         
     }
     
@@ -98,6 +108,7 @@ class NewsTableViewCell: UITableViewCell {
         self.likeButton.frame.size.width = 20
         
         var scaledHeight = self.contentImageView.image?.size.height
+        
         if let image = self.contentImageView.image {
             let contentImageSizeWidth = image.size.width
             let contentImageSizeHeight = image.size.height
@@ -105,7 +116,10 @@ class NewsTableViewCell: UITableViewCell {
             scaledHeight = contentImageSizeHeight * ratio
         }
         
-        
+        let widthLikeConstraints = NSLayoutConstraint(item: likeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
+        let heightLikeConstraints = NSLayoutConstraint(item: likeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
+        let xLikeConstraints = NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.bottomMargin, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: -20)
+        let yLikeConstraints = NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.trailingMargin, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.trailingMargin, multiplier: 1, constant: -20)
         
         NSLayoutConstraint.activate([
             iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
@@ -137,30 +151,30 @@ class NewsTableViewCell: UITableViewCell {
             
             contentImageView.topAnchor.constraint(equalTo: contentText.bottomAnchor, constant: 5),
             contentImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30),
-            contentImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            contentImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             contentImageView.heightAnchor.constraint(equalToConstant: scaledHeight ?? 0),
+//            contentImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            contentImageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             contentImageView.widthAnchor.constraint(equalToConstant: contentView.frame.size.width),
+            contentImageView.heightAnchor.constraint(equalToConstant: scaledHeight ?? 0),
             
-            likeButton.topAnchor.constraint(equalTo: contentImageView.topAnchor, constant: 5),
-            likeButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -5),
-            likeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            likeButton.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -5),
+            widthLikeConstraints,heightLikeConstraints,xLikeConstraints, yLikeConstraints
+//            likeButton.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -5),
+//            likeButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5)
             // Не могу разобраться почему все ломается при динамической высоте изображения
         ])
     }
     
     @objc
     func handleLikeTap() {
-        if self.isNeededToLike {
+        if self.isLiked {
             self.currentLikes += 1009
             self.likeButton.applyState(.liked(self.currentLikes))
         } else {
-            self.currentLikes -= 1009
+            self.currentLikes -= 100
             self.likeButton.applyState(.disliked(self.currentLikes))
         }
 
-        self.isNeededToLike.toggle()
+        self.isLiked.toggle()
     }
     
 }
