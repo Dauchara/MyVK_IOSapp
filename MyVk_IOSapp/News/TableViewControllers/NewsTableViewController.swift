@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewsTableViewController: UITableViewController {
 
     @IBOutlet var NewsTableView: UITableView!
-    let news = News()
-//    let users = User()
-//    let groups = Group()
+    var newsItems = [NewsResponseItem]()
+    var newsProfiles = [NewsProfile]()
+    var newsGroups = [NewsGroup]()
+    var newCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NewsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        GetNews()
     }
 
     // MARK: - Table view data source
@@ -29,27 +33,44 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return news.news.count
+        return newCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
         
-        let content = news.news[indexPath.row]
-        let owner = NewsOwnerModel(name: "", photo: UIImage(named: "deadVK"))
+        let content = newsItems[indexPath.row]
         cell.setupCell()
-//        if content.isGroup {
-//            guard let group = self.groups.groups.first(where: { $0.id == content.ownerID }) else { return cell }
-//            let owner = NewsOwnerModel(name: group.name, photo: group.mainPhoto)
-//            cell.setupCell(news: content, newsOwner: owner)
-//            return cell
-//        } else {
-//            guard let user = self.users.users.first(where: { $0.id == content.ownerID }) else { return cell }
-//            let owner = NewsOwnerModel(name: "\(user.fName) \(user.sName)", photo: user.mainPhoto)
-//            cell.setupCell(news: content, newsOwner: owner)
-//            return cell
-//        }
+
         return cell
     }
+}
 
+extension NewsTableViewController {
+    func GetNews() {
+        let session = CustomSession.instance
+        let path = "newsfeed.get"
+        
+        let parameters: Parameters = [
+            "access_token": session.token,
+            "v": "5.130",
+            "filters":"post,photo,photo_tag,wall_photo",
+            "count": "10",
+            "user_id": session.userId
+        ]
+        
+        let url = session.baseUrl + path
+        
+        AF.request(url, method: .get, parameters: parameters).responseDecodable(of: News.self) { (response) in
+            print(response)
+            guard let news = response.value else { return }
+            self.newsItems = news.response.items
+            self.newsGroups = news.response.groups
+            self.newsProfiles = news.response.profiles
+            self.newCount = news.response.items.count
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
