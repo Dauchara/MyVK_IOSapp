@@ -25,16 +25,18 @@ final class LikeControl: UIControl {
         self.addSubview(self.numberOfLikesLabel)
     
         self.applyState(initialState)
-
+        
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         self.imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         self.imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-
+        self.imageView.backgroundColor = .purple
         self.numberOfLikesLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.numberOfLikesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.numberOfLikesLabel.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor, constant: 4).isActive = true
-        self.numberOfLikesLabel.centerYAnchor.constraint(equalTo: self.imageView.centerYAnchor, constant: 4).isActive = true
+//        self.numberOfLikesLabel.centerYAnchor.constraint(equalTo: self.imageView.centerYAnchor, constant: 4).isActive = true
 //        self.numberOfLikesLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 4).isActive = true
+        self.numberOfLikesLabel.backgroundColor = .purple
     }
     
     required init?(coder: NSCoder) {
